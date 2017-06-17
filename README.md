@@ -1,10 +1,10 @@
 # CS 699 - Software Lab
 This contains all the work done as part of cs699 Software Lab course. A description of directory contents is as given below   
 
-* **assignment1** - _Linux commands and Basic HTML_  
+* **assignment1** - _Vim, HTML and Linux_  
 Create a simple HTML page about you. The page contains a brief introdution about you. The courses you have taken in current semester and other miscellleneous information like your contacts, website links, etc.  
 
-* **assignment2** - _Latex_  
+* **assignment2** - _Latex Basics_  
 Using Latex create a simple Latex manual document. Try to use most of the basic features of Latex such as figures, tables, etc.
 
 * **assignment3** - _Advanced Latex_  
@@ -22,7 +22,7 @@ Improve upon the previous document to use some of the advanced fetaures of Latex
 
 * **assignment9** - _Advanced Python_  
 
-* **assignment10** - _Java Programming_  
+* **assignment10** - _Eclipse and Java Programming_  
 
 * **assignment11** - _Flex and Bison_  
 
