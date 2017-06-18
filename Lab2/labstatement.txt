@@ -1,0 +1,22 @@
+Basic Latex
+
+Develop a latex document to develop a 2 to 3 page
+latex manual for some features of latex
+
+you are free to chose your feature list
+
+organize your manual in terms of sections, subsections,
+and use tables, figures etc.
+
+Tools which you can use:
+
+vim, kile  editors to type out the .tex file
+dia/xfig  to draw pictures and to export them in image formats
+pdflatex to create a pdf from  a tex file
+
+
+No copy paste from any material. 
+Everything should be typed
+in by you. Create your own examples.
+
+
