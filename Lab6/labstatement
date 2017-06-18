@@ -1,0 +1,85 @@
+AWK Programs 
+use gawk
+
+copy the tarball from 
+http://www.cse.iitb.ac.in/~rkj/cs699/
+
+It contains input samples and submission instructions
+=====================================================
+
+** bash script is the outer program which receives
+input filename and output file name, 
+It calls awk scripts *** 
+
+**sample inputs for your reference are given in respective 
+directories**
+
+
+0. Write a program "csv2txt" to convert a comma separated csv spreadsheet
+ file into a plain tab separated txt file. 
+
+1. Write a text splitter called 
+"txtsplitter" which splits text in the input file such that
+after every full stop, a line break is given.
+
+2. Write a text splitter called "formatter" which adds a line
+break after every k characters in the file. k is to be given
+as argument to formatter.
+
+3. Write a text to latex converter called "txt2texSimple" which
+converts a text file into a valid latex file containing just 
+this text. 
+
+
+4. Enhance the converter developed  above to "txt2texWithChapters"
+which recognizes Chapter numbers and 
+written in the text and converts
+them into latex chapters.
+
+Use the file 11.txt as your input file, and make
+a good latex out of it, make the pdf and see how
+it works.
+This has been downloaded from projectgutenberg.org
+
+
+5. Develop an html to latex converter called "html2tex", 
+considering input
+similar to the given html file. It has images in it
+at the beginning of every chapter, and there are many chapters
+in the book.
+We are interested in all the text chapters and all the graphics. 
+Handle other features if you can, or ignore them. 
+
+6.  Enhance program developed in 4 to include section numbers
+and subsection numbers. Call the program "txt2texAdvanced"
+
+use sample text given in the respective directory as your input.
+
+
+7. Write a program called "grader" to grade students automatically.
+Columns represent roll no., marks for quiz1, quiz2, midsem, endsem, project.
+The max marks for each are: 20, 20, 50, 100, 15.
+The weightages for them are: 10, 10, 15, 50, 15
+Ranges for grades are as follows: AA 91 to 100, AB 81 to 90,
+and so on for BB, BC, CC, CD and all the rest get DD. 
+
+Output tab separated values of roll no., total, grade.
+
+Now, Add one student entry with roll no. as "Averages", and 
+for this student, provide the average in the Total and 
+the Grade column.
+
+Similarly add another student entry called "StdDev"
+to provide std deviation in column of Total.
+
+Expand the input file sufficiently to test your program
+to cover the grade ranges.
+
+Use arrays. 
+
+
+
+** For q.no. 5 we will pick up a few best converters and give
+them some token of appreciation. ****
+
+

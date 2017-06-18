@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/css.css" media="screen, projection">
+<title>AWK Arrays Explained with 5 Practical Examples</title>
+<meta name="description" content="Awk programming language supports arrays. As part of our on-going awk examples series, we have seen awk user defined variables and awk built-in variables.">
+<meta name="robots" content="noodp, noydir">
+<link rel="canonical" href="http://www.thegeekstuff.com/2010/03/awk-arrays-explained-with-5-practical-examples/">
+<link rel="alternate" type="application/rss+xml" title="The Geek Stuff feed" href="http://www.thegeekstuff.com/feed/">
+<link rel="pingback" href="http://www.thegeekstuff.com/xmlrpc.php">
+
+<!-- All in One SEO Pack 2.2.6.2 by Michael Torbert of Semper Fi Web Design[295,348] -->
+<meta name="description" content="Awk programming language supports arrays. As part of our on-going awk examples series, we have seen awk user defined variables and awk built-in variables.">
+
+<link rel="canonical" href="http://www.thegeekstuff.com/2010/03/awk-arrays-explained-with-5-practical-examples/">
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="The Geek Stuff » AWK Arrays Explained with 5 Practical Examples Comments Feed" href="http://www.thegeekstuff.com/2010/03/awk-arrays-explained-with-5-practical-examples/feed/">
+		<script async="" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/cbgapi.loaded_1"></script><script async="" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/cbgapi.loaded_0"></script><script src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/ca-pub-8090601437064582.js" type="text/javascript" async=""></script><script src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.thegeekstuff.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/wp-emoji-release.js"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="shortcut icon" href="http://static.thegeekstuff.com/wp-content/uploads/2015/05/favicon.ico.gzip">
+<script src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/a" type="text/javascript"></script><script src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/inputtools.js" type="text/javascript"></script></head>
+<body class="template-single">
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5302569-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<div class="container">
+	<div id="header" class="header">
+<p id="logo"><a href="http://www.thegeekstuff.com/"><img src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/thegeekstuff.gif" alt="The Geek Stuff"></a></p><div id="header_ad"><div id="header_ad1">
+<script async="" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/adsbygoogle.js"></script>
+<!-- TGS Logo Header -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8090601437064582" data-ad-slot="4708993701"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>
+	</div>
+	<span class="menu_control">≡ Menu</span>
+<ul id="menu-tgs-menu" class="menu"><li id="menu-item-15798" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-15798"><a href="http://www.thegeekstuff.com/">Home</a></li>
+<li id="menu-item-15797" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15797"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/">Free eBook</a></li>
+<li id="menu-item-15805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15805"><a href="http://www.thegeekstuff.com/best-of-the-blog/">Start Here</a></li>
+<li id="menu-item-15800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15800"><a href="http://www.thegeekstuff.com/contact/">Contact</a></li>
+<li id="menu-item-15802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15802"><a href="http://www.thegeekstuff.com/about/">About</a></li>
+</ul>
+	<div class="columns">
+		<div class="content">
+			<div id="post-3416" class="post_box grt top" itemscope="" itemtype="http://schema.org/Article">
+				<div class="headline_area">
+					<h1 class="headline" itemprop="name">AWK Arrays Explained with 5 Practical Examples</h1>
+					<div class="byline small">
+						<span class="post_author_intro">by</span> <span class="post_author" itemprop="author">Sasikala</span>
+						<meta itemprop="datePublished" content="2010-03-10">
+						<meta itemprop="dateModified" content="2013-03-25">
+						<span class="post_date_intro">on</span> <span class="post_date" title="2010-03-10">March 10, 2010</span>
+					</div>
+				</div>
+				<div class="post_content" itemprop="articleBody">
+<div style="margin:7px 0px 6px 0px; padding:5px;">
+
+<div style="float:left; width=95px">
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/fastbutton.html" name="I0_1440395452459" id="I0_1440395452459" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+</div>
+
+<div style="float:left; padding:2px; width:90px"><iframe src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/like_002.html" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div style="width=95px">
+<iframe src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/tweet_button.html" style="position: static; visibility: visible; width: 77px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" id="twitter-widget-i1440395452883750646" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/widgets.js"></script>
+</div>
+
+</div>
+<p><img class="alignright size-medium wp-image-3745" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/awk-tutorial-arrays-300x176.png" alt="" height="176" width="300">Awk programming language supports arrays. As part of our on-going <a href="http://www.thegeekstuff.com/tag/awk-tutorial-examples/">awk examples</a> series, we have seen <a href="http://www.thegeekstuff.com/2010/01/awk-tutorial-understand-awk-variables-with-3-practical-examples/">awk user defined variables</a> and <a href="http://www.thegeekstuff.com/2010/01/8-powerful-awk-built-in-variables-fs-ofs-rs-ors-nr-nf-filename-fnr/">awk built-in variables</a>.
+ Arrays are an extension of variables. Arrays are variable that hold 
+more than one value. Similar to variables, arrays also has names. In 
+some programming languages, arrays has to be declared, so that memory 
+will be allocated for the arrays. Also, array indexes are typically 
+integer, like array[1],array[2] etc.,<br>
+<span id="more-3416"></span></p>
+<h3>Awk Associative Array</h3>
+<p>Awk supports only associative array. Associative arrays are like 
+traditional arrays except they uses strings as their indexes rather than
+ numbers. When using an associative array, you can mimic traditional 
+array by using numeric string as index.</p>
+<pre>Syntax:
+
+arrayname[string]=value</pre>
+<p>In the above awk syntax:</p>
+<ul>
+<li><strong> arrayname</strong> is the name of the array.</li>
+<li> <strong>string </strong>is the index of an array.</li>
+<li> <strong>value </strong>is any value assigning to the element of the array.</li>
+</ul>
+<h3>Accessing elements of the AWK array</h3>
+<p>If you want to access a particular element in an array, you can 
+access through its index — arrayname[index], which gives you the value 
+assigned in that index.</p>
+<p>If you want to access all the array elements, you can use a loop to go through all the indexes of an array as shown below.</p>
+<pre>Syntax:
+
+for (var in arrayname)
+actions</pre>
+<p>In the above awk syntax:</p>
+<ul>
+<li> <strong>var </strong>is any variable name</li>
+<li> <strong>in </strong>is a keyword</li>
+<li> <strong>arrayname </strong>is the name of the array.</li>
+<li> <strong>actions </strong>are list of statements to be performed. If you want to perform more than one action, it has to be enclosed within braces.</li>
+</ul>
+<p>This loop executes list of actions for each different value which was
+ used as an index in array with the variable var set to that index.</p>
+    <center>
+      <div style="margin-left:2px; margin-top:10px; margin-bottom:10px; ">
+
+        <!-- AD BLOCK -->
+		
+<script async="" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/adsbygoogle.js"></script>
+<!-- TGS Inside Content -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-8090601437064582" data-ad-slot="8643685131"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <!-- END AD BLOCK -->
+
+	  </div>
+    </center>
+
+
+<h3>Removing an element from the AWK array</h3>
+<p>If you want to remove an element in a particular index of an array, 
+use awk delete statement. Once you deleted an element from an awk array,
+ you can no longer obtain that value.</p>
+<pre>Syntax:
+
+delete arrayname[index];</pre>
+<p>The loop command below removes all elements from an array. There is 
+no single statement to remove all the elements from an array. You have 
+to go through the loop and delete each array element using awk delete 
+statement.</p>
+<pre>for (var in array)
+     delete array[var]</pre>
+<h2>5 Practical Awk Array Examples</h2>
+<p>All the examples given below uses the Iplogs.txt file shown below. 
+This sample text file contains list of ip address requested by the 
+gateway server. This sample Iplogs.txt file contains data in the 
+following format:</p>
+<pre>[date] [time] [ip-address] [number-of-websites-accessed]</pre>
+<pre>$ cat Iplogs.txt
+180607 093423	123.12.23.122 133
+180607 121234	125.25.45.221 153
+190607 084849   202.178.23.4 44
+190607 084859   164.78.22.64 12
+200607 012312	202.188.3.2 13
+210607 084849   202.178.23.4 34
+210607 121435	202.178.23.4 32
+210607 132423	202.188.3.2 167</pre>
+<h3>Example 1. List all unique IP addresses and number of times it was requested</h3>
+<pre>$ awk '{
+&gt; Ip[$3]++;
+&gt; }
+&gt; END{
+&gt; for (var in Ip)
+&gt; print var, "access", Ip[var]," times"
+&gt; }
+&gt; ' Iplogs.txt
+125.25.45.221 access 1  times
+123.12.23.122 access 1  times
+164.78.22.64 access 1  times
+202.188.3.2 access 2  times
+202.178.23.4 access 3  times</pre>
+<p>In the above script:</p>
+<ul>
+<li> Third field ($3) is an ip address. This is used as an index of an array called Ip.</li>
+<li> For each line, it increments the value of the corresponding ip address index.</li>
+<li> Finally in the END section, all the index will be the list of 
+unique IP address and its corresponding values are the occurrence count.</li>
+</ul>
+<h3>Example 2. List all the IP address and calculate how many sites it accessed</h3>
+<p>The last field in the Iplogs.txt is the number of sites each IP 
+address accessed on a particular date and time. The below script 
+generates the report which has list of IP address and how many times it 
+requested gateway and total number of sites it accessed.</p>
+<pre>$cat ex2.awk
+BEGIN {
+print "IP Address\tAccess Count\tNumber of sites";
+}
+{
+Ip[$3]++;
+count[$3]+=$NF;
+}
+END{
+for (var in Ip)
+	print var,"\t",Ip[var],"\t\t",count[var];
+}
+
+$ awk -f ex2.awk Iplogs.txt
+IP Address	Access Count	Number of sites
+125.25.45.221 	 1 		 153
+123.12.23.122 	 1 		 133
+164.78.22.64 	 1 		 12
+202.188.3.2 	 2 		 180
+202.178.23.4 	 3 		 110</pre>
+<p>In the above example:</p>
+<ul>
+<li> It has two arrays. The index for both the arrays are same — which is the IP address (third field).</li>
+<li> The first array named “Ip” has list of unique IP address and its 
+occurrence count. The second array called “count” has the IP address as 
+an index and its value will be the last field (number of sites), so 
+whenever the IP address comes it just keeps on adding the last field.</li>
+<li>In the END section, it goes through all the IP address and prints 
+the Ip address and access count from the array called Ip and number of 
+sites from the array count.</li>
+</ul>
+<h3>Example 3. Identify maximum access day</h3>
+<pre>$ cat ex3.awk
+{
+date[$1]++;
+}
+END{
+for (count in date)
+{
+	if ( max &lt; date[count] ) {
+		max = date[count];
+		maxdate = count;
+	}
+
+}
+print "Maximum access is on", maxdate;
+}
+
+$ awk -f ex3.awk Iplogs.txt
+Maximum access is on 210607</pre>
+<p>In this example:</p>
+<ul>
+<li>array named “date” has date as an index and occurrence count as the value of the array.</li>
+<li>max is a variable which has the count value and used to find out the date which has max count.</li>
+<li>maxdate is a variable which has the date for which the count is maximum.</li>
+</ul>
+<h3>Example 4. Reverse the order of lines in a file</h3>
+<pre>$ awk '{ a[i++] = $0 } END { for (j=i-1; j&gt;=0;) print a[j--] }' Iplogs.txt
+210607 132423	202.188.3.2 167
+210607 121435	202.178.23.4 32
+210607 084849   202.178.23.4 34
+200607 012312	202.188.3.2 13
+190607 084859   164.78.22.64 12
+190607 084849   202.178.23.4 44
+180607 121234	125.25.45.221 153
+180607 093423	123.12.23.122 133</pre>
+<p>In this example,</p>
+<ul>
+<li>It starts by recording all the lines in the array ‘a’.</li>
+<li>When the program has finished processing all lines, Awk executes the END { } block.</li>
+<li>The END block loops over the elements in the array ‘a’ and prints the recorded lines in reverse manner.</li>
+</ul>
+<h3>Example 5. Remove duplicate and nonconsecutive lines using awk</h3>
+<pre>$ cat &gt; temp
+foo
+bar
+foo
+baz
+bar
+
+$ awk '!($0 in array) { array[$0]; print }' temp
+foo
+bar
+baz</pre>
+<p>In this example:</p>
+<ul>
+<li>Awk reads every line from the file “temp”, and using “in” operator it checks if the current line exist in the array “a”.</li>
+<li>If it does not exist, it stores and prints the current line.</li>
+</ul>
+<h3>Recommended Reading</h3>
+<p><strong><img src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/sed-and-awk-125.png" alt="" title="Sed and Awk 101 Hacks" class="frame alignright size-full wp-image-7642" height="177" width="125"><a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/">Sed and Awk 101 Hacks</a>, by Ramesh Natarajan</strong>.
+ I spend several hours a day on UNIX / Linux environment dealing with 
+text files (data, config, and log files). I use Sed and Awk for all my 
+my text manipulation work. Based on my Sed and Awk experience, I’ve 
+written Sed and Awk 101 Hacks eBook that contains 101 practical examples
+ on various advanced features of Sed and Awk that will enhance your UNIX
+ / Linux life. Even if you’ve been using Sed and Awk for several years 
+and have not read this book, please do yourself a favor and read this 
+book. You’ll be amazed with the capabilities of Sed and Awk utilities.</p>
+<div style="margin:7px 0px 3px 0px; padding:5px; background:#F2F0E8">
+
+<div style="float:left; width=95px">
+<div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/fastbutton_002.html" name="I1_1440395452468" id="I1_1440395452468" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+</div>
+
+<div style="float:left; width=95px">
+<iframe src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/tweet_button_002.html" style="position: static; visibility: visible; width: 77px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" id="twitter-widget-i1440395452885182477" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/widgets.js"></script>
+</div>
+
+<div style="float:left; padding:2px; width:90px"><iframe src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/like_002.html" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div style="padding:1px">
+&gt;&nbsp;<a href="#commentform" rel="nofollow">Add your comment</a>
+</div>
+
+</div>
+<h3>If you enjoyed this article, you might also like..</h3>
+<table>
+<tbody><tr>
+<td valign="top">
+<ol>
+<li><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/">50 Linux Sysadmin Tutorials</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/">Linux 101 Hacks 2nd Edition eBook</a>&nbsp;<img title="Linux 101 Hacks Book" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/free-small.png" alt="Linux 101 Hacks Book"></li>
+</ol>
+</td>
+<td>
+<ul>
+<li><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/">Awk Introduction – 7 Awk Print Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/">Advanced Sed Substitution Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br>
+<center>
+<table id="booktable">
+<tbody><tr>
+<td>
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/"><img title="Bash 101 Hacks Book" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/bash-132.png" alt="Bash 101 Hacks Book"></a>
+</td>
+<td>
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/"><img title="Sed and Awk 101 Hacks Book" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/sed-and-awk-132.png" alt="Sed and Awk 101 Hacks Book"></a>
+</td>
+<td>
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/"><img title="Nagios Core 3 Book" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/nagios-core-132.png" alt="Nagios Core 3 Book"></a>
+</td>
+<td>
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/"><img title="Vim 101 Hacks Book" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/vim-101-hacks-132.png" alt="Vim 101 Hacks Book"></a>
+</td>
+</tr>
+</tbody></table>
+</center>
+<br>
+				</div>
+				<p class="post_tags" itemprop="keywords">
+					<span class="post_tags_intro">Tagged as:</span>
+					<a href="http://www.thegeekstuff.com/tag/awk-array-assignment/" rel="tag">Awk Array Assignment</a>,
+					<a href="http://www.thegeekstuff.com/tag/awk-array-initialization/" rel="tag">Awk Array Initialization</a>,
+					<a href="http://www.thegeekstuff.com/tag/awk-array-length/" rel="tag">Awk Array Length</a>,
+					<a href="http://www.thegeekstuff.com/tag/awk-array-size/" rel="tag">Awk Array Size</a>,
+					<a href="http://www.thegeekstuff.com/tag/awk-array-sort/" rel="tag">Awk Array Sort</a>,
+					<a href="http://www.thegeekstuff.com/tag/awk-tutorial-examples/" rel="tag">Awk Tutorial Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/linux-awk-examples/" rel="tag">Linux Awk Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/linux-awk-tutorial/" rel="tag">Linux Awk Tutorial</a>,
+					<a href="http://www.thegeekstuff.com/tag/unix-awk-examples/" rel="tag">Unix Awk Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/unix-awk-tutorial/" rel="tag">Unix Awk Tutorial</a>
+				</p>
+			</div>
+			<div id="comments">
+				<p class="comments_intro"><span class="bracket">{</span> <span class="num_comments">10</span> comments… <a href="#commentform" rel="nofollow">add one</a> <span class="bracket">}</span></p>
+				<ul class="comment_list">
+					<li class="comment even thread-even depth-1" id="comment-38720">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">aldoem</span>
+							<span class="comment_date">March 10, 2010, 2:46 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-38720"><p>Very gut…<br>
+Multiarray example:</p>
+<p>#!/bin/bash<br>
+Matrix=(“one” “two” “three”)<br>
+one=(“1.1″ “1.2” “1.3”)<br>
+two=(“2.1″ “2.2” “2.3”)<br>
+three=(“3.1″ “3.2” “3.3” )</p>
+<p>for i in ${Matrix[@]}<br>
+do<br>
+ one_Item=$(eval echo “\${$i[0]}”)<br>
+ two_Item=$(eval echo “\${$i[1]}”)<br>
+ three_Item=$(eval echo “\${$i[2]}”)<br>
+done</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-38720" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-38756">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">Eric Pulvino</span>
+							<span class="comment_date">March 10, 2010, 8:53 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-38756"><p>Looking 
+at several of these examples here I would refer to these arrays more as 
+MAPS. The difference in my mind is that the indexes are not necessarily 
+numerically consecutive in the awk cases…. they are more like the keys 
+used in C++ style maps which can take any value as needed to suit the 
+data set.</p>
+<p>Interesting functionality though, I will be sure to use it at some point I’m sure.</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-38756" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-49230">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">porosec</span>
+							<span class="comment_date">June 6, 2010, 1:30 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-49230"><p>I think solve example 3 more effective is </p>
+<p>awk ‘max &lt; $1 { max = $1 } END { print max }' Iplogs.txt</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-49230" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-250062">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">jagadeeshwaran k</span>
+							<span class="comment_date">June 11, 2012, 7:20 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-250062"><p>really interesting . i have learned many things regarding arrays in awk.</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-250062" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-260645">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">kaique</span>
+							<span class="comment_date">June 28, 2012, 12:30 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-260645"><p>..i need more examples of an array!</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-260645" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-283236">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">archana</span>
+							<span class="comment_date">August 10, 2012, 1:25 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-283236"><p>suer super super!!!!!!!!</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-283236" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-723213">
+						<div class="comment_head">
+							<span class="avatar"><a href="https://github.com/aishwarya4444" rel="nofollow"></a></span>
+							<span class="comment_author"><a href="https://github.com/aishwarya4444" rel="external nofollow" class="url">Aishwarya</a></span>
+							<span class="comment_date">April 30, 2013, 2:26 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-723213"><p>another approach for Example 4. Reverse the order of lines in a file<br>
+awk ‘BEGIN{s=””} {s=$0″\n”s;} END{printf(“%s”,s);}’ Iplogs.txt</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-723213" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-804451">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">Jan</span>
+							<span class="comment_date">June 11, 2013, 7:36 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-804451"><p>Please help. I need to add ” 0|” before “QESTMD” or  all the 4th segments – how do I do this with awk?</p>
+<p>data:</p>
+<p>0||08276101|QESTMD||10|1|257.05|787736015|7877360B|10062013|0|DISP|||<br>
+0||08276101|QESTMD||10|2|85.86|744549019|7445490B|10062013|0|DISP|||<br>
+0||08276401|PHARMD||100|1|7.49|894672004|8946720E|10062013|0|DISP|||<br>
+0||08276402|TRANNS||20|0|0|759694001|7596940B|10062013|0|DISP|||</p>
+<p>output shoud be:</p>
+<p>0||08276101| 0|QESTMD||10|1|257.05|787736015|7877360B|10062013|0|DISP|||<br>
+0||08276101| 0|QESTMD||10|2|85.86|744549019|7445490B|10062013|0|DISP|||<br>
+0||08276401| 0|PHARMD||100|1|7.49|894672004|8946720E|10062013|0|DISP|||<br>
+0||08276402| 0|TRANNS||20|0|0|759694001|7596940B|10062013|0|DISP|||</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-804451" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-862343">
+						<div class="comment_head">
+							<span class="avatar"></span>
+							<span class="comment_author">Manish</span>
+							<span class="comment_date">July 30, 2013, 1:19 am</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-862343"><p>a1 is the file contain the question data.<br>
+awk ‘BEGIN {FS = “|”;OFS=”|” }; {TT=”0|”$4;$4=TT;print $0}’ a1</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-862343" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1542833">
+						<div class="comment_head">
+							<span class="avatar"><a href="http://chandigarhchat.com/" rel="nofollow"></a></span>
+							<span class="comment_author"><a href="http://chandigarhchat.com/" rel="external nofollow" class="url">chandigarh chat</a></span>
+							<span class="comment_date">April 23, 2014, 3:33 pm</span>
+						</div>
+						<div class="comment_text grt" id="comment-body-1542833"><p>how to split all owners of files in a dir into an array and display the 1st owner? There code im using is:</p>
+<p>ls -ltr | awk ‘{ x=split($3,a,” “); print x[0];}’</p>
+<p>But it gives error. Please help!</p>
+<p>Thanks<br>
+~C</p>
+						</div>
+						<div class="comment_footer">
+							<a class="comment_permalink" href="#comment-1542833" title="permalink to this comment" rel="nofollow">Link</a>
+						</div>
+</li><!-- #comment-## -->
+				</ul>
+				<form id="commentform" method="post" action="http://www.thegeekstuff.com/wp-comments-post.php">
+					<a rel="nofollow" id="cancel-comment-reply-link" href="http://www.thegeekstuff.com/2010/03/awk-arrays-explained-with-5-practical-examples/#respond" style="display:none;">Cancel reply</a>
+					<p class="comment_form_title">Leave a Comment</p>
+					<p id="comment_form_name">
+						<label for="author">Name</label>
+						<input id="author" class="input_text" name="author" tabindex="1" type="text">
+					</p>
+					<p id="comment_form_email">
+						<label for="email">Email</label>
+						<input id="email" class="input_text" name="email" tabindex="2" type="text">
+					</p>
+					<p id="comment_form_url">
+						<label for="url">Website</label>
+						<input id="url" class="input_text" name="url" tabindex="3" type="text">
+					</p>
+					<p id="comment_form_comment">
+						<label for="comment">Comment</label>
+						<textarea name="comment" id="comment" class="input_text" tabindex="4" rows="6"></textarea>
+					</p>
+					<p id="comment_form_submit">
+						<input id="submit" class="input_submit" name="submit" tabindex="5" value="Submit" type="submit">
+					</p>
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="ac28949545" type="hidden"></p>
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+	<label for="subscribe">Notify me of followup comments via e-mail</label>
+	</p>
+
+
+<p style="display: none;"></p><input name="comment_post_ID" value="3416" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+				<input id="ak_js" name="ak_js" value="1440395452410" type="hidden"></form>
+			</div>
+			<div class="prev_next">
+				<p class="next_post">Next post: <a href="http://www.thegeekstuff.com/2010/03/find-empty-directories-and-files/" rel="next">How to Find and Delete Empty Directories and Files in Unix</a></p>
+				<p class="previous_post">Previous post: <a href="http://www.thegeekstuff.com/2010/03/espeak-speech-synthesizer-for-ubuntu/" rel="prev">How to Convert Text Document to Speech on Ubuntu Using eSpeak</a></p>
+			</div>
+		</div>
+		<div class="sidebar">
+<div class="widget widget_text" id="text-21">			<div class="textwidget"><a title="Subscribe via RSS" href="http://www.thegeekstuff.com/feed" rel="nofollow">RSS</a>&nbsp; | &nbsp;<a title="Subscribe via Email" href="http://feedburner.google.com/fb/a/mailverify?uri=TheGeekStuff&amp;loc=en_US" rel="nofollow">Email</a>&nbsp; | &nbsp;<a title="Follow us on Twitter" href="http://twitter.com/thegeekstuff" rel="nofollow">Twitter</a>&nbsp; | &nbsp;<a title="Become a fan" href="http://www.facebook.com/thegeekstuff" rel="nofollow">Facebook</a>&nbsp; | &nbsp;<a title="Follow us on Google+" href="https://plus.google.com/112493711428194838421/posts">Google+</a>
+<br><br>
+<form action="http://www.thegeekstuff.com/search" id="cse-search-box">
+  <div>
+    <input name="cx" value="005666763606120661560:zkmegbt_djm" type="hidden">
+    <input name="cof" value="FORID:10" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input style="background: url(&quot;//cse.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="30" type="text">
+    <input style="border-color:#CCCCCC #999999 #999999 #CCCCCC; border-style:double; border-width:1px; overflow:visible;" name="sa" value="Search" type="submit">
+  </div>
+<input value="www.thegeekstuff.com/2010/03/awk-arrays-explained-with-5-practical-examples/" name="siteurl" type="hidden"><input value="www.google.co.in/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=0CCQQFjABahUKEwipirTlg8HHAhVMA44KHed6Dnk&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2010%2F03%2Fawk-arrays-explained-with-5-practical-examples%2F&amp;ei=WrHaVan1BcyGuATn9bnIBw&amp;usg=AFQjCNGbxvQHjuVfj7mimvptQHgf-ruw6w" name="ref" type="hidden"><input name="ss" type="hidden"></form>
+<script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/jsapi"></script>
+<script type="text/javascript">google.load("elements", "1", {packages: "transliteration"});</script><script src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/a_002" type="text/javascript"></script><link href="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/transliteration.css" type="text/css" rel="stylesheet"><script src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/transliteration.js" type="text/javascript"></script>
+<script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/t13n"></script>
+<script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/brand"></script>
+<br></div>
+		</div><div class="widget widget_text" id="text-3">			<div class="textwidget"><script async="" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/adsbygoogle.js"></script>
+<!-- TGS Side Bar -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-8090601437064582" data-ad-slot="9054077260"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br></div>
+		</div><div class="widget widget_text" id="text-4"><p class="widget_title">EBOOKS</p>			<div class="textwidget"><ul>
+<li><img title="Linux 101 Hacks Book" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/free-small.png" alt="Linux 101 Hacks Book">&nbsp;<a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/">Linux 101 Hacks 2nd Edition eBook</a> - Practical Examples to Build a Strong Foundation in Linux</li>
+<li><a href="http://www.thegeekstuff.com/bash-101-hacks-ebook/">Bash 101 Hacks eBook</a> - Take Control of Your Bash Command Line and Shell Scripting</li>
+<li><a href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/">Sed and Awk 101 Hacks eBook</a> - Enhance Your UNIX / Linux Life with Sed and Awk</li>
+<li><a href="http://www.thegeekstuff.com/vim-101-hacks-ebook/">Vim 101 Hacks eBook</a> - Practical Examples for Becoming Fast and Productive in Vim Editor</li>
+<li><a href="http://www.thegeekstuff.com/nagios-core-ebook/">Nagios Core 3 eBook</a> - Monitor Everything, Be Proactive, and Sleep Well</li>
+</ul></div>
+		</div><div class="widget widget_text" id="text-22">			<div class="textwidget"><iframe src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/likebox.html" style="border:none; overflow:hidden; height:258px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+		</div><div class="widget widget_text" id="text-17"><p class="widget_title">POPULAR POSTS</p>			<div class="textwidget"><ul>
+<li><a href="http://www.thegeekstuff.com/2009/01/12-amazing-and-essential-linux-books-to-enrich-your-brain-and-library/">12 Amazing and Essential Linux Books To Enrich Your Brain and Library</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/">50 UNIX / Linux Sysadmin Tutorials</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/">50 Most Frequently Used UNIX / Linux Commands (With Examples)</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/gtd-getting-things-done/">How To Be Productive and Get Things Done Using GTD</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/03/30-things-to-do-when-you-are-bored-and-have-a-computer/">30 Things To Do When you are Bored and have a Computer</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/09/linux-file-system-structure/">Linux Directory Structure (File System Structure) Explained with Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/">Linux Crontab: 15 Awesome Cron Job Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/">Get a Grip on the Grep! – 15 Practical Grep Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/linux-ls-command-examples/">Unix LS Command: 15 Practical Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/">15 Examples To Master Linux Command Line History</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/bug-tracking-system/">Top 10 Open Source Bug Tracking System</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/01/vi-and-vim-macro-tutorial-how-to-record-and-play/">Vi and Vim Macro Tutorial: How To Record and Play</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/">Mommy, I found it! -- 15 Practical Linux Find Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/best-gmail-tips-and-tricks/">15 Awesome Gmail Tips and Tricks</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/expertise-in-google-search/">15 Awesome Google Search Tips and Tricks</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/raid-levels-tutorial/">RAID 0, RAID 1, RAID 5, RAID 10 Explained with Diagrams</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/">Can You Top This? 15 Practical Linux Top Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/09/top-5-best-network-monitoring-tools/">Top 5 Best System Monitoring Tools</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/top-5-best-linux-os-distributions/">Top 5 Best Linux OS Distributions</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/06/how-to-monitor-remote-linux-host-using-nagios-30/">How To Monitor Remote Linux Host using Nagios 3.0</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/">Awk Introduction Tutorial – 7 Awk Print Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/">How to Backup Linux? 15 rsync Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/09/the-ultimate-wget-download-guide-with-15-awesome-examples/">The Ultimate Wget Download Guide With 15 Awesome Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/top-5-best-linux-text-editors/">Top 5 Best Linux Text Editors</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/tcpdump-command-examples/">Packet Analyzer: 15 TCPDUMP Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/06/bash-array-tutorial/">The Ultimate Bash Array Tutorial with 15 Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/">3 Steps to Perform SSH Login Without Password Using ssh-keygen &amp; ssh-copy-id</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/">Unix Sed Tutorial: Advanced Sed Substitution Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/03/netstat-command-examples/">UNIX / Linux: 10 Netstat Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/06/the-ultimate-guide-for-creating-strong-passwords/">The Ultimate Guide for Creating Strong Passwords</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/6-steps-to-secure-your-home-wireless-network/">6 Steps to Secure Your Home Wireless Network</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul></div>
+		</div><div class="widget widget_text" id="text-19"><p class="widget_title">CATEGORIES</p>			<div class="textwidget"><ul>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/linux/">Linux Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/vim-2/">Vim Editor</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/sed/">Sed Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/awk/">Awk Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/bash-2/">Bash Shell Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/nagios-2/">Nagios Monitoring</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/openssh-2/">OpenSSH</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/iptables/">IPTables Firewall</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/apache/">Apache Web Server</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/mysql/">MySQL Database</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/perl/">Perl Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/google/">Google Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/ubuntu/">Ubuntu Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/postgresql/">PostgreSQL DB</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/hello-world/">Hello World Examples</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/c-programming/">C Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/c-plus-plus/">C++ Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/dell-2/">DELL Server Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/oracle/">Oracle Database</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/vmware/">VMware Tutorials</a></li>
+</ul></div>
+		</div><div class="widget widget_text" id="text-20">			<div class="textwidget"><div id="___person_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 106px;"><iframe title="+Badge" data-gapiattached="true" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/person.html" name="I2_1440395452475" id="I2_1440395452475" vspace="0" tabindex="0" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 106px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div></div>
+		</div>		</div>
+	</div>
+	<div class="footer">
+<div id="footer_widgets" class="columns_3">
+	<div class="one-third sidebar first">
+<div class="widget widget_text" id="text-7"><h4 class="widget_title">About The Geek Stuff</h4>			<div class="textwidget"><br>
+<img class="float" title="Ramesh Natarajan" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/ramesh-small.gif" alt="Linux 101 Hacks Book">
+My name is <strong>Ramesh Natarajan</strong>. I will be posting 
+instruction guides, how-to, troubleshooting tips and tricks on Linux, 
+database, hardware, security and web. My focus is to write articles that
+ will either teach you or help you resolve a problem. Read more about <a href="http://www.thegeekstuff.com/about/">Ramesh Natarajan</a> and the blog.</div>
+		</div>	</div>
+	<div class="one-third sidebar">
+<div class="widget widget_text" id="text-9"><h4 class="widget_title">Contact Us</h4>			<div class="textwidget"><br>
+<strong>Email Me :</strong>
+Use this <a href="http://www.thegeekstuff.com/contact" rel="nofollow">Contact Form</a>
+ to get in touch me with your comments, questions or suggestions about 
+this site. You can also simply drop me a line to say hello!.
+<br><br>
+<a title="Follow us on Google+" href="https://plus.google.com/112493711428194838421/posts">Follow us on Google+</a>
+<br><br>
+<a title="Follow us on Twitter" href="http://twitter.com/thegeekstuff" rel="nofollow">Follow us on Twitter</a>
+<br><br>
+<a href="http://www.facebook.com/thegeekstuff" rel="nofollow">Become a fan on Facebook</a>&nbsp;&nbsp;</div>
+		</div>	</div>
+	<div class="one-third sidebar last">
+<div class="widget widget_text" id="text-8"><h4 class="widget_title">Support Us</h4>			<div class="textwidget"><br>
+Support this blog by purchasing one of my ebooks.
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/">Bash 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/">Sed and Awk 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/">Vim 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/">Nagios Core 3 eBook</a></div>
+		</div>	</div>
+	<div style="clear:both;"></div>
+</div>
+		<p class="attribution">Copyright © 2008–2015 Ramesh Natarajan. All rights reserved  | <a href="http://www.thegeekstuff.com/copyright">Terms of Service</a></p>
+	</div>
+</div>
+<script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/form.js"></script>
+<script type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/comment-reply.js"></script>
+<script type="text/javascript">
+(function(){
+	var classes = document.getElementsByClassName('menu_control');
+	for (i = 0; i < classes.length; i++) {
+		classes[i].onclick = function() {
+			var menu = this.nextElementSibling;
+			if (/show_menu/.test(menu.className))
+				menu.className = menu.className.replace('show_menu', '').trim();
+			else
+				menu.className += ' show_menu';
+		};
+	}
+})();
+</script>
+<noscript><style type="text/css" scoped>.menu { display: block; }</style></noscript>
+<script gapi_processed="true" type="text/javascript" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/plusone.js"></script>
+
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="AWK%20Arrays%20Explained%20with%205%20Practical%20Examples_files/postmessageRelay.html" id="oauth2relay509048609" name="oauth2relay509048609"></iframe></body><iframe src="" style="display: none;"></iframe></html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced
+Content Delivery Network via Amazon Web Services: CloudFront: static.thegeekstuff.com
+
+ Served from: www.thegeekstuff.com @ 2015-08-23 22:32:39 by W3 Total Cache -->

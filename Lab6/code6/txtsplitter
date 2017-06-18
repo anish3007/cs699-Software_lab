@@ -1,0 +1,1 @@
+gawk -f txtsplitter.awk $1>$2

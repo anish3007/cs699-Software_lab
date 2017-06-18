@@ -1,0 +1,2 @@
+gawk -f txt2texSimple.awk $1> $2
+pdflatex $2

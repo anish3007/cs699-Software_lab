@@ -1,0 +1,35 @@
+how to run
+	gawk -f <awkscriptfile> <inputfile>
+
+
+pattern {action}
+......
+
+patterns are regexps  embedded in / /
+empty pattern matches every input
+
+sequence of actions for every pattern is given
+in {..} and are separated 
+by ;  or by newlines
+
+============
+
+BEGIN {action}
+
+ starting actions before everything else
+
+END {action}
+  at the end
+
+
+from gawk manual section 1.4:
+
+The awk utility reads the input files one line at a time. For each line, awk tries the patterns of each rule. If several patterns match, then several actions execute in the order in which they appear in the awk program. If no patterns match, then no actions run.
+
+After processing all the rules that match the line (and perhaps there are none), awk reads the next line. (However, see Next Statement, and also see Nextfile Statement.) This continues until the program reaches the end of the file. For example, the following awk program contains two rules: 
+
+
+
+read section 1.8  when to use awk
+
+

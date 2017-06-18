@@ -1,0 +1,1 @@
+gawk 'BEGIN{RS=""}{gsub(/.{'$1'}/, "&\n"); print}' $2>$3
