@@ -1,0 +1,25 @@
+map (f, l)
+	applies function f to each element in l and returns a new list
+		of same length, containing the return results 
+
+filter (f, l)
+	applies f to each element in l, and picks elements for which f
+		evalutes to true
+
+reduce (f, l)
+	f takes 2 arguments
+	2 elements of l are first given to f
+	then the previous result and the next element is given to f
+	
+	returns the final result
+	
+
+sets
+	basic sets
+
+setoperations
+	
+	operations on sets
+
+dictionary
+	key value pairs

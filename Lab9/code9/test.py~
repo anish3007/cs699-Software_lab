@@ -1,0 +1,113 @@
+import lib9,sys
+l=["ahmar","arun","chinmay","jatin","prasanth","samkit","sneha"]
+l2=[2,55,19,32,17]
+l3=[1,2,3]
+l4=['a','b','c']
+l5=[3,1,22,5,7,4]
+s1=[1,2,3]
+s2={1,2,3}
+s3={2,1,3}
+s4={1,2}
+mydict=dict()
+if len(sys.argv)<2:
+	print("Usage: python3 test.py <question_no>")
+	exit(0)
+if int(sys.argv[1])==1:
+	sample_output = lib9.sizes(l)
+	expected_output = [5,4,7,5,8,6,5]
+	if(sample_output==expected_output):
+		print("Testcase 1 passed!")
+	else:
+		print("Testcase 1 failed")
+elif int(sys.argv[1])==2:
+	sample_output = lib9.pick(l,'a')
+	expected_output = ["ahmar","arun"]
+	if(sample_output==expected_output):
+		print("Testcase 1 passed!")
+	else:
+		print("Testcase 1 failed")
+elif int(sys.argv[1])==3:
+	sample_output = lib9.largest(l2)
+	expected_output = 55
+	if(sample_output==expected_output):
+		print("Testcase 1 passed!")
+	else:
+		print("Testcase 1 failed")
+elif int(sys.argv[1])==4:
+	sample_output = lib9.product(l3,l4)
+	expected_output = [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c'), (3, 'a'), (3, 'b'), (3, 'c')]
+	if(sample_output==expected_output):
+		print("Testcase 1 passed!")
+	else:
+		print("Testcase 1 failed")
+elif int(sys.argv[1])==5:
+	sample_output = lib9.isequal(l3,l4)
+	expected_output = 0
+	if(sample_output==expected_output):
+		print("Testcase 1 passed!")
+	else:
+		print("Testcase 1 failed")
+	sample_output = lib9.isequal(l3,l3)
+	expected_output = 1
+	if(sample_output==expected_output):
+		print("Testcase 2 passed!")
+	else:
+		print("Testcase 2 failed")
+elif int(sys.argv[1])==6:
+#l2=[2,55,19,32,17]
+	sample_output = lib9.split_on_pivot(l2,3)
+	expected_output = [[2,19,17],[55]]
+	if(sample_output==expected_output):
+		print("Testcase 1 passed!")
+	else:
+		print("Testcase 1 failed")
+	sample_output = lib9.split_on_pivot(l5,4)
+	expected_output = [[3,1,5,4],[22]]
+	if(sample_output==expected_output):
+		print("Testcase 2 passed!")
+	else:
+		print("Testcase 2 failed")
+elif int(sys.argv[1])==7:
+	sample_output = list(lib9.powerset(s1))
+	#print(sample_output)
+	expected_output = [[1, 2, 3], [2, 3], [1, 3], [3], [1, 2], [2], [1], []]
+	flag=0
+	for i in sample_output:
+		if i not in expected_output:
+				flag=1
+				print("Testcase 1 failed")
+				break
+	for i in expected_output:
+		if i not in sample_output:
+				flag=1
+				print("Testcase 1 failed")
+				break
+	if(flag==0):
+		print("Testcase 1 passed!")
+elif int(sys.argv[1])==8:
+	sample_output = lib9.seteq(s2,s3)
+	expected_output = 1
+	if(sample_output==expected_output):
+		print("Testcase 1 passed!")
+	else:
+		print("Testcase 1 failed")
+	sample_output = lib9.seteq(s2,s4)
+	expected_output = 0
+	if(sample_output==expected_output):
+		print("Testcase 2 passed!")
+	else:
+		print("Testcase 2 failed")
+
+elif int(sys.argv[1])==9:
+	mydict=lib9.build("dict.txt")
+	print(mydict)
+elif int(sys.argv[1])==10:
+	mydict=lib9.build("dict.txt")
+	out10=lib9.getmeaning(mydict,'growl')
+	print(out10)
+
+elif int(sys.argv[1])==11:
+	mydict=lib9.build("dict.txt")
+	out11=lib9.getwords(mydict,'etiquette')
+	print(out11)
+	

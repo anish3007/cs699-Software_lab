@@ -1,0 +1,99 @@
+Sets, lists, dictionaries, lambda functions map, reduce, filter
+
+
+All functions should be in a single SILENT file called "9lib.py"
+You write your separate files to test these functions.
+See submission instructions separately.
+
+----------------------------------------------
+
+1. map,reduce,filter 
+
+1.1  sizes(L):
+		to return a list of sizes
+		of strings included in given list L
+
+		use map and lambda expression inside the body of sizes(L)
+
+
+1.2 pick (L, c):
+		to return a list of words in L, which are
+		starting from character c
+
+		use filter inside the body of pick
+
+1.3 largest(L):
+		to return the max element in list L
+		use reduce to find it
+
+----------------------------------------------
+
+2. Sets
+
+2.1 function :  product(l1,l2)	
+input: two lists	
+output: a list containing the cross product of the two lists, 
+each item in this result list is a tuple 
+	e.g.product ([1,2,3],[a,b]) --> [(1,a),(1,b),(2,a),(2,b)...]
+	
+
+2.2 function :  isequal (l1, l2)	
+input: two lists, which are 1 dimensional lists, i.e. they do not contain lists
+		inside them. But there may be duplicates
+output: boolean value indicating whether the two lists are equal. Order
+	must be checked 
+
+ function : split_on_pivot (l, index)
+		l is an non-sorted list of numbers
+		split list l in two lists l1 and l2 such that 
+			all elements strictly smaller than l[index] are in l1,
+			and all elements strictly greater than l[index] are in l2.
+
+		return a list containing the two lists which have been just created. 
+
+
+		e.g. split_on_pivot ([3,1,22,5,7,4],4) produces
+				[[3,1,5,4],[22]]
+
+what to submit: list_functions.py
+
+2.3 Set functions
+ 
+function :  powerset(s1)	
+input: one set 
+output: a set containing the powerset of items in the input set
+		e.g. powerset of set {1,2,3}	is
+				set { {}, {1}, {2}, {3}, {1,2}, {1,3},
+					{2,3}, {1,2,3} }
+
+function: seteq (s1, s2)
+		check whether two sets are exactly equal
+
+--------------------------------------------- 
+
+3. Dictionary
+
+ 3.1 build (fname)
+		returns a dictionary built from the given file 
+		e.g. d1 = build ("English")
+
+		input file contain one word and its meaning in a single
+			line. The word comes first. Then the meaning after
+			a tab.
+		
+
+ 3.2 getmeaning (dictionary, word)
+		returns the meaning of the given word if present else returns "word not found"
+
+
+ 3.3 getwords (dictionary, w)
+		returns all those words (keys) in whose meanings (values), word w appears as a distinct part at least once
+
+	Such a function is useful for building a thesaurus.
+
+
+
+--------------------------------------------------
+
+
+
