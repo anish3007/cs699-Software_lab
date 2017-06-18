@@ -1,0 +1,61 @@
+Lab Today
+
+
+A) GNUPLOT
+B) Work for PROJECT Soft deadline
+
+Both will be submitted on 2 different submission threads.
+
+No extension this time.
+
+
+
+A) Make gnuplots for the following with titles, colors. Use your
+own data. You can get data from the interent as well e.g. energy
+consumption per user per month in 2015, power/price ratio of cpu etc.
+Give title to x axis, y axis, and also a title for the whole graph.
+Make png output file. Submit png files,gnuplot command files, and the
+data files.
+
+	1) one mathematical function without using any data file
+	(not those in the demo)
+	2) Using 2 column data (x and y values as columns) in a file
+	3) Multicolumn data, first one on the x axis, at least 2 columns
+		to be plotted on y axis in the same graph
+	4) Pie chart
+	5) Bar chart
+	6) Frequency distribution
+	7) Histogram
+	8) 3-D plot for an equation without using any data file 
+	(e.g. for function a^2+b^2+2 for selected ranges of 
+	values of a and b.)
+	9) 3-D plot using a data file containing x, y, z values
+
+   This part can be continued from home later and usual extension
+   will be given if needed.
+   
+   submission file structure:
+   rollno> 1.plot, 2.plot, 3.plot, 4.plot, 5.plot, 6.plot...9.plot
+           2.data, 3.data, 4.data, 5.data, 6.data, 7.data, 9.data
+           1.png ..... 9.png
+           
+           Total: 25 files
+   
+   Upload whatever you can in the first hour in soft submission thread, and
+   continue later. A minimal submission today is required. We expect that
+   at least you do 4 or 5 today.
+   
+B) In the second half, get started on your project. Submit your current code,
+and a short file 'FirstSubmission.txt' which includes the items
+that you covered so far for your project. (e.g. anything such as 
+the code that you wrote, the functionalitis that you decided, 
+the interfaces/scripts
+ that you could build, testing code that you wrote, pages that you read etc).
+ No extension will be given for this part.
+
+
+
+
+
+
+
