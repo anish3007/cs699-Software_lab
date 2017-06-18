@@ -4,7 +4,7 @@ This contains all the work done as part of cs699 Software Lab course. A descript
 * **Lab 1** - _Vim, HTML and Linux_  
 Create a simple HTML page about you. The page contains a brief introdution about you. The courses you have taken in current semester and other miscellleneous information like your contacts, website links, etc.  
 
-* **Lab2 2** - _Latex Basics_  
+* **Lab 2** - _Latex Basics_  
 Using Latex create a simple Latex manual document. Try to use most of the basic features of Latex such as figures, tables, etc.
 
 * **Lab 3** - _Advanced Latex_  
