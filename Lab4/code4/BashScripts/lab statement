@@ -1,0 +1,112 @@
+a) Makefile
+
+I have given you a demo in tutorial class to
+explain how "separate compilation", "separate
+development", and " file dependencies" can be
+effectively handled through Makefiles.
+
+Now you make another demo and demonstrate the
+same. Think of any suitable program that
+uses a function call or a class whose implementation is not located where it is used.
+
+
+Submit a tarball containting all your files
+including the makefile and a readme file
+which explains your solution.
+
+
+B) Experiments with BASH
+
+1. Create one bash script called "script1".
+Add two three shell commands in it. 
+Make this file executable using chmod command.
+Read about chmod command using man pages 
+"man chmod" and figure out the 'how to' 
+of chmod.
+Execute this bash script and see that it works.
+This is your first bash script.
+
+Now create bash scripts to accomplish the
+following tasks:
+
+2. accept command line arguments and simply
+print them
+
+3. accept a file name as command line argument
+and dump the content of this file on screen
+
+4. accept command line arguments and use them 
+as file names. concatenate these two files and produce another as concatenation.
+
+5. create one directory for storing
+executable files somewhere in your
+home directory structure.
+
+copy all your shell scripts and executable
+files in that directory.
+
+change environment variable PATH to append this path in it by the following command
+
+now change the directory to somewhere else.
+
+and execute these programs, see that it works.
+
+For point 5 no submission is required. you
+can use this dir from hereon for your own
+shell scripts and binary executable installations.
+
+6. tables tab1 and tab2 contain two tables.
+you have to write a shell script to generate
+a third table tab3 which is a merger of the two
+tables, but the merger should be sorted according to the column number which comes in
+as argument to the shell script.
+
+e.g. merge tab1 tab2 tab3 2   creates file
+tab3 following the above merge and sort condition.
+
+use sort shell command.
+use man sort to figure out how sort works.
+ 
+
+7. use convert command to convert the format
+of an image.
+e.g. convert im1.jpg im1.gif
+or dia exported eps to png etc.
+
+use man convert to see the formats available.
+
+now your problem is to write a script
+that will convert all files with a given input extension to files with the given output
+extension
+
+e.g. script call
+ mycs699convert  eps png
+
+ converts all *.eps files in the current directory to *.eps, with respective filenames
+preserved.
+
+
+8. bulk renaming
+
+write a script to rename all files
+*.* in the current working directory 
+to *hallo.*
+
+which means, you add a "hallo" at the
+end of every filename and preserve the
+extension.
+
+9. Write a shell script which counts the total number of classes present through
+all the files in that directory. e.g.
+if there are two files and 3 classes in each
+then the script should print 5.
+
+hint: grep, line counting by wc, redirection
+to files using '>', pipe using '|'
+
+This is a slightly tougher assignment given
+that this is your first time with shell scripts. But do try.
+
+all the best.
+
+

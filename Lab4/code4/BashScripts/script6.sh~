@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rm tab3
+cat tab1>>tab3
+cat tab2>>tab3
+echo "files tab1 and tab2 merged into tab3"
+
+sort -k $1 tab3>>tab4
+rm tab3
+mv tab4 tab3
