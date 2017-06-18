@@ -1,0 +1,83 @@
+Python Programming Problems
+
+============================================================================
+Use Python3.*  (the highest version available on your machine) to run your programs.
+Some features have changed a bit from the older versions. So it's better to use the
+latest python interpreter to develop programs which you can use in the long term.
+
+===========================================================================
+*Templates:
+We have also uploaded templates for submission in a separate folder.
+
+*Test script to test on our sample test cases:
+The templates folder also contains a script called "test.sh" to test 
+your submissions using some standard
+inputs and outputs. Run test as an executable shell script. 
+
+* prepare upload: 
+Also there is a shell script called "prepare-upload.sh" which cross-checks if all
+your files are in and then it makes a tar file for you. You should upload
+only the file created by this script.
+
+============================================================================
+
+
+1. Given a number, print its index in the Fibonacci series, which starts from 0.
+   Indices start from 0.
+   If the number is not a Fibonacci number, print "NOT FOUND".
+   -- Python filename: fibindex.py <input-number>
+   -- Function inside the python file: result = fibindex(number)
+   -- 	Do not print directly from the function.
+
+
+
+2. Find transpose of a matrix. Read the matrix of numbers from a file
+   and dump the result the result on screen.
+   -- Python filename: transpose.py <file1>
+   -- Function inside the python file: resultmat = transpose(inputmat)
+   -- Figure out the matrix dimensions from the input data.
+   -- 	Do not print directly from the function.
+
+
+3. Matrix multiplication: Read input matrices from 2 files, and dump the product
+   to another file.
+   -- Python filename: matmult.py <file1> <file2> <outfile>
+   -- Function inside the python file: result = matmult(mat1, mat2)
+   -- Figure out the dimensions from the input data.
+   -- 	Do not use files inside the function.
+   -- 	Do not print anything from the function.
+   -- If the multiplication cannot be performed, return string ERROR.
+		the result can hold either this string or the correct result, as 
+			there are no data types associated. But when you use
+			the variable result, you will have to check what is
+			contained in it.
+
+
+4. Implement binary search on a list read from input file. Print the index
+   of the number, or "NOT FOUND" if the number is not present.
+   Indices start from 0.
+   -- Python filename: binsearch.py <input-file> <number>
+   -- Input data is UNSORTED. Sort it using a ready-made function.
+   -- Function inside the python file: result = binsearch(inputlist, number)
+   -- Figure out the list-dimension from the input data.
+   -- 	Do not print anything from the function.
+
+
+5. develop the following functions on strings:
+	(1) locate (substr, str)  returns index where the substring occurs first, if not found, return -1
+	(2) count (substr, str)  returns how many times the substring occurs in str
+	(3) remove (substr, str) removes the first occurrence of the substring from the string, if it is present
+	(4) replace (substr, newsubstr, str)  replaces the first occurrence of the substring with the new substring inside the given string
+	(5) removeAll (substr, str)  removes all occurrences of the substring one by one. Use function 3 above.
+	(6) replaceAll (substr, newsubstr, str) replaces all occurrences one by one. Use function 5 above
+
+
+   -- Python filename: strings.py
+   -- All functions inside this file, and this file has no other code. 
+      No print statements in this file.
+   -- Your test code should be in a separate file: teststrings.py, and not in strings.py
+		import strings.py
+
+   -- we will write our own test code with your file strings.py
+
+	
