@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<title>
+		Address Form
+	</title>
+	<style>
+		label{
+		display:inline-block;
+		width:100px;
+		margin-right:30px;
+		text-align:right;
+		}
+		label#state{
+		display:inline-block;
+		width:50px;
+		margin-right:30px;
+		text-align:right;
+		}
+	</style>
+	<body>
+		<h1> Enter the Address below</h1>
+		<form action="server.php" method="post">
+		<label>Line 1:</label><input type="text" name="addline1" size="40"/><br><br>
+		<label>line 2:</label><input type="text" name="addline2" size="40"/><br><br>
+		<label>City:</label><input type="text" name="city" size="10"/>
+		<label id="state">State:</label><input type="text" name="state" size="10"/><br><br>
+		<label>Pin:</label><input type="text" name="pin" size="10"/><br><br>
+		<label></label><input type="submit"/>
+		</form>
+	</body>
+</html>

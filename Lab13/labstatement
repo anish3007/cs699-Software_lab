@@ -1,0 +1,113 @@
+PHP server side programming
+using html, javascript on client side
+
+YOU MUST USE THE FOLDER STRUCTURE SUPPLIED TO SUBMIT THE ASSIGNMENTS
+The folder is named as your roll no.
+
+the html files will be somewhere in your public html
+
+
+Write request response programs as follows:
+
+1. AddressConcatenator
+
+	client.html: html form with submit button
+		     input address through three text boxes
+		     (house no, street, town)
+		     
+		  
+		      
+        server.php:  concatenate the three text box strings received
+                      and display the result as one single string
+                      
+                    
+
+2. FormValidation 
+
+	client.html: form to input name, age, roll no
+	server.php: validation 
+			name should not contain non-alphabets except 1 space between every two words.
+			age should not contain non-numerals, should be int >0
+			roll no: XXYYZZZZ format, XX are alphas, YY is 15, ZZZZ are numerals	
+			no field should be blank
+			
+			Upon detecting errors:
+				display all errors back to client and ask the 
+				client to refill till success.
+				
+				Which means you need an html back button generated 
+				from php which links to client.html
+			
+			After success, print all values.
+			
+3. FileRead
+	app for gate applicants to chose their exam center preferences
+	
+	
+	client.html:
+          		1 or 2 lines of info and 
+          		a button "I want to take GATE"
+          		
+          		
+         server.php:
+         		9 choices have to be made by the candidate as pref 1, 2, ..9.
+         		
+         		So, when candidate presses the above button, 9 choice lists 
+         		with exam centers (using HTML <select> </select>) are 
+         		displayed in a grid of 3X3  (use "for" loop to generate the grid)
+
+       			The list of cities should be read from a file "cities.txt"
+
+			But read the list only once from the file.
+			         	
+         		Candidate chooses nine cities and press "Submit choices"
+         		
+         choices.php:
+			Validates that all the submitted choices are different.         		
+         		Validate that all choices are chosen (use a default-"Not chosen")
+         		
+4. FileWrite
+
+	
+	client.html:
+		ask for Name,  phone no. in text fields
+
+	server.php: validate and write to an existing file directory.txt
+		    the directory.txt entries are csv formt which are comma separated tuples, one per line.
+		    	
+	dump.php:   displays the entire directory in the form of html table
+			to read the csv file, use fgetcsv() function	
+			http://www.w3schools.com/php/func_filesystem_fgetcsv.asp
+			
+	
+5. DirectorySearch
+	client.html: phone no. as inputs or name as input (any one)
+	server.php: searches the directory given phone and displays the name, or vice versa
+	The directory should be created in assignment 4. So if you add a new entry from code
+	of assignment 4, the search should automatically recognize it.		
+
+6. DBAPP
+	Combine 4 and 5
+	
+	But instead of file read/write use MySQL server 
+	to store, create, update and read the <ph no, name> tuples. 			
+        
+        you won't be using any file storage here for storing the tel directory. 	
+         	
+        mysql calls:
+        http://www.w3schools.com/php/php_mysql_connect.asp
+  
+  	Server side php should read the mysql server address, user name, password,
+  		and DB name from a file "dbdetails.txt"
+  		
+  		one sample file dbdetails.txt is included in the assignment packet.
+        
+        We are providing for you a common mysql server (for your projects, you can use
+        	your own servers)
+        
+        Create a table with rollno as table name, and use this table only.     
+        
+        [See the updated file "dbdetails.txt" for sampel mysql server ip address details]
+  
+			
+			

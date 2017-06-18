@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<title>
+		Phone Directory Search
+	</title>
+	<style>
+		body{
+			background-color: skyblue;
+		}
+		table{
+			border-spacing: 20px;
+		}
+		label{
+		display:inline-block;
+		width:300px;
+		margin-right:30px;
+		text-align:left;
+		}
+		#div1{
+			background-color: beige;
+		}
+		#div2{
+			background-color: beige;
+		}
+		.button{
+			width: 300px;
+			text-align: center;
+		}
+	</style>
+
+	<body>
+		<div id="div" align="center">
+		<h1> Phone Directory Search</h1>
+		<form action="server.php" method="post">
+		<table>
+			<tr>
+				<td><input type="radio" name="search" value="name" checked/> Name:</td>  
+				<td><input type="text" name="nameval" size="30"/></td>
+			</tr>
+			<tr>	
+				<td><input type="radio" name="search" value="phone"/> Phone:</td>
+				<td><input type="text" name="phoneval" size="30"/></td>
+			</tr>
+		</table>
+			<br><br>
+			<input type="submit" value="Search"/>
+		</form>
+		</div>
+	</body>
+</html>

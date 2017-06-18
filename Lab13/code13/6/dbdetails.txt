@@ -1,0 +1,4 @@
+server:10.105.3.99:3306
+uname:cs699user
+password:abc123
+DBname:lab13
