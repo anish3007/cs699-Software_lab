@@ -1,0 +1,93 @@
+Flex and Bison Programming
+
+
+All programs should be compiled using their respective 'makefile's
+to produce their executables.
+
+Compiled binaries of first few programs are given to you.
+you can try them before you try your solutions.
+
+This assignment will be checked manually.
+
+
+
+A) write the following programs in only flex
+
+  (1) echo.l
+
+	to produce an executable file called 'echo'
+
+	when executed, 'echo' behaves as follows:
+
+	it echoes the input line by line 
+	The input is to be given from keyboard
+	terminates with STOP
+
+  (2) spacecounter.l
+
+	to produce an executable file called 'spacecounter'
+
+	when executed, 'spacecounter' prints on the terminal 
+	the number of spaces(newline or anyother special character is not counted as space) 
+	in the input file given as its argument
+
+  (3) find_n_replace.l
+
+	to produce an executable file called 'find_n_replace'
+
+	when executed, 'find_n_replace' finds and replaces a word(Case-sensitive) in a given file
+	the output is printed to screen
+	the first parameter is the filename
+	the second parameter is the find word
+	the third parameter is the replace word
+
+B) joining flex with bison
+
+   (1)  calc1.l, calc1.y
+	Improved version of the calculator program given in demo to include mod operator %
+
+	to produce 'calc1'
+
+   (3)  calc2.l, calc2.y
+	Improved version of the calc1 program above to include floating point numbers
+
+	to produce 'calc2'
+
+C)  Sentence grammer checker
+
+	checker.l, checker.y
+
+	to produce executable file 'checker'
+
+	checks whether every sentence in the given input file follows grammer rule
+			subject verb object.
+				or
+			subject verb.
+
+	It prints "OK" if the input file is grammatically correct, else it prints
+		"NOT OK"
+
+	All subjects must be from file titled "subjects"
+	All verbs must be from file titled "verbs"
+	All objects must be from file titled "objects"
+
+	The first word in every sentence should start with a capital letter.
+
+	Every sentence should end with a full stop
+
+	other places are not case sensitive
+
+	the files subjects, objects, verbs may not include proper capitalization requied in sentences.
+
+	Nowhere in your code should you use any of the words in the three data files.
+		The data files may be changed anytime! But you are free to use built
+			in data structures.
+		We will run your program on a different set of data files.
+
+
+D) Bonus:   print error messages in your own format if the grammar is "NOT OK"
+		name of file: improvedchecker.l, improvedchecker.y
+
+
+
+
