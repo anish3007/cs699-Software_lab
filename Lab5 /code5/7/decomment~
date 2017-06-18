@@ -1,0 +1,1 @@
+sed 's/[/\/\].*//g' sample-input.cpp >> sample-output.cpp

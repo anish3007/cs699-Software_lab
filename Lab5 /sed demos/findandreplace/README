@@ -1,0 +1,17 @@
+hallo2hi    changes hallo to hi, only first occurence is changed per line
+	    send an input file as paramater
+hallo2hiGlobal  the above, but a global change, uses flag g
+hallo2hiInPlace   as above, but tampers input file and changes it directly
+hallo2hi.sed	 has sed commands, which are the inlined by usesedscriptfile 
+in		an input file
+in1		another input file
+in1bk		backup created automatically by option -i
+in.backup	safe copy of in, manually created
+inbk		backup created automatically by option -i
+multiplecommands.sed	a list of sed commands, can be included elsewhere
+myout		output file created using > redirection on command line
+out		another output file 
+space2dot	spaces are changed to dots
+space2dotInPlaceAndWithBackup	 the above+in place replacement+auto backup
+space2dotwithbackup	spaces to dots, with auto backup
+usesedscriptfile	uses sed script file hallo2hi.sed

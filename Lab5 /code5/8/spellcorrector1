@@ -1,0 +1,15 @@
+for word in $(<$1)
+do
+   word=`echo $word | grep -o "\b.*\b"`
+
+   
+   a=$(grep -i $word dict | awk '{ print $1}')
+   b=$(grep -i $word dict | awk '{ print $2}')
+
+	if [ "$word" == "$a" ]
+	then
+		
+		sed -i "s/$a/$b/g" $1;
+	fi
+
+done

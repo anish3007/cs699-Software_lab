@@ -1,0 +1,7 @@
+Extra Practice Problems
+
+9. In a given file, change all small letters to capital letters
+10. Simillarly, change all capital letters to small letters.
+11. In a given file, change first letter of every word to captial letter.
+12. In a given file, change the First letter of every paragraph to Captial letter. Paragraphs can be identified by extra line breaks (as in latex).
+13. Swap every adjacent pair of words in a file. Eg. Word1 with Word2, and Word3 with Word4 etc

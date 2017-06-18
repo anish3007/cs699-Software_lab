@@ -1,0 +1,10 @@
+AstarB2P   a program which converts A*B to P
+grammar	   corrects a grammatical mistake, use para as its input text
+in	   use this file as input to the scripts
+in.bak	   this is a safe copy of in, in case you lose in, use this one
+para	   an input paragraph  which has grammatical mistakes
+setofChar2P   makes a regexp using characters in a given set, and changes
+			the patter to P
+space2newline	  spaces are replaced by newline
+spaceTotab	  text nicely formatted with tab by replacing spaces with tabs
+wordsinbraces	  some words are wrapped inside () braces

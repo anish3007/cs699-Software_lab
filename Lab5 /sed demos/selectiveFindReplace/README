@@ -1,0 +1,6 @@
+hallo2hiGlobal 	 hallo changed to hi globally
+in			an input file
+in.backup		a manual backup of the input file
+replaceEverywhereExceptLine2	except line 2, replace everywhere
+replaceOnlyOnLine2		replace only on line 2
+replaceOnSelectedLines		replace on specific line nos.

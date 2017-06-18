@@ -1,0 +1,108 @@
+From this assignment onwards, the TAs will
+ use automatic checkers to check your
+programs. So it is important to
+follow the specifications.
+We are giving you sample test cases with
+expected outputs. Use diff program to
+compare your output with the expected
+output on sample cases before submitting.
+The TAs will use the samples and also
+some more test cases during evaluation.
+
+your tar file should be <rollno>_<labno>.tar.gz
+and it should be created from a folder named
+<rollno>_<labno>
+Inside the folder the directory names should
+be integers corresponding to the question nos.
+
+To create tar.gz, go out of the folder and
+execute:
+tar cvzf <rollno>_<labno>.tar.gz <rollno>_<labno>
+ 
+============================================
+
+1. Write a letter generator named "lettergen" which takes in a standard letter in some proforma and produces a letter specialized to
+a task. The standard proforma is in
+a file called "Proforma".
+
+your program should accept the values
+of X, Y, P, Q, R, A, B, D and output file name   exactly in this order and produce the output file by replacing these letters by the
+incoming values.
+
+sample execution:
+./lettergen "Manager, Systems Division" "Infosys" "Python" "C++" "Java" "long experience" "knowledge" "Ramesh G." sample-output
+This should generate the sample output as sample-output file given.
+
+
+2. write a single punctuation
+beautifier called "latexbeautifier1"
+for latex which removes
+white spaces before , . ? ; : !
+The script takes one input file as its
+argument and makes changes to the same
+file in place.
+
+3. Similarly write "latexbeautifier2" which
+adds a white space after each of the above
+punctuation marks
+
+4. Now write "latexbeautifier3" which 
+adds one white space before (  and after )
+
+5. Finishing the sequence of
+beautifiers, write "latexbeautifier4"
+which removes all white spaces 
+after ( and before )
+
+6. Write a single script which combines
+   all the above latex beautifiers into one
+  script called "latexbeautifier"
+
+
+7. Write a program called "decomment" 
+which takes in a C++ file name as its 
+input argument and removes all single 
+line comments in it and writes the
+output in a file named "out.cpp".
+
+   
+8. File
+dict contains a list of pairs of commonly misspelt words and their
+  correct forms
+
+  write a bash script named "spellcorrector1" 
+  accepting input text filename argument.
+
+  The script should use a file called "dict", and 
+apply all the changes suggested in dict to the input file
+
+
+e.g. %spellcorrector1 myfile.tex
+  will correct spellings in myfile.tex as instructed in 
+   file "dict"
+
+sample content of file dict is given below. 
+you are free to expand this file.
+
+your script should not depend on the no. of entries in
+the file. Test this out. The TAs will use  their own 
+dictionary and their own input file to test your program
+"spellcorrector1"
+
+But you need to submit your test cases also.
+before submitting test with our sample test cases.
+
+name your test cases as:
+
+dict1,dict2 etc.,
+text1, text2 etc.
+
+
+An example list of mistakes and
+their correct forms:
+http://www.learnenglish.de/spelling/commonspellingmistakes.html
+
+you can pull out your words from here, or from your
+own experience, or from any other source.
+
+

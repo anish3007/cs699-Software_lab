@@ -1,0 +1,5 @@
+in	 an input file
+out	an output file
+substitute  makes a substitution and creates the output file
+		this is a bash script, it takes in 2 filenames as parameters
+		which are used inside as $1 and $2

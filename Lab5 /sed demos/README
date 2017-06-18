@@ -1,0 +1,20 @@
+line by line
+
+g for global replacement, else only the first one is replaced
+
+regular expressions
+
+char  matches itself
+. 	any char
+*	matches a sequence of chars, 0 or more
+\+	matches a 1+ sequence of chars
+\?	0 or 1 characters
+\{i\} 	As *, but matches exactly i sequences
+\{i,j\}
+    Matches between i and j, inclusive, sequences
+... etc...
+
+see README in each directory 
+
+
+
