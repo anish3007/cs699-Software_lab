@@ -1,0 +1,82 @@
+1. open eclipse executing command "eclipse"
+
+2. select your workspace directory (you may chose the default given by it)
+
+2. open a new java project from File menu
+give any name that you want to give it-- e.g. yourname-lab10
+
+
+3. close the welcome screen which comes in for the first timer 
+
+4. Now you can create new .java files into this  project through
+File New Class menu. You can select the type of class that you want
+to develop.. e.g. a class with a main.
+
+
+5. edit your file... stuff in code
+during editing the ide gives suggestions!
+
+
+6  Run menu runs your file
+
+7. to create submission .zip file, use File-->Export-->General->Archive File
+menu, here select your project of which you want to create a zip,
+and provide the filename for the .zip file.
+
+and create it..
+
+go to your .zip file and check whether everything is in (bin and src 
+of your code)
+
+and then upload it.
+
+follow submission instructions for naming convention etc,
+which is separately loaded.
+
+========
+
+7.  Explore other features of the IDE- 
+
+e.g. when you create a new class,
+you can mention superclasses etc., and a lot of code templates can
+get generated for you from the IDE.
+
+
+or to debug your code, you can add breakpoints by rightclicking in
+the left margin of the source code and selecting breakpoint feature
+To run in debug mode, go to Run menu and select Debug
+You will be given debug perspective. You can run step by step with
+many breakpoints. Buttons will appear to run  this way.
+
+The perspective from Debug to Source can be changed from the window menu.
+(use open perspective submenu)
+
+If you hover over a name/function, you will be prompted with the meaning of
+the function description/documentation
+
+You can navigate through hierarchies through Navigate menu
+
+you can also go to function definition if you right click on the
+function usage and select the "open declaration menu".
+
+
+command line args can be set through Run-->Run configurations->arguments
+tab menu
+
+press 'control Space' at any point, it suggests how you can complete
+ your code
+
+if a word is underlined in red, hover the mouse on top of the word, and it
+will show you possible fixes, which you can directly
+select.
+
+If there is no red or yellow underline, it supposed to mean that
+your program looks syntactically fine! syntax errors are pointed out
+right during edit time. even unused variables will be pointed out.
+
+
+
+
+
+enjoy:)
+

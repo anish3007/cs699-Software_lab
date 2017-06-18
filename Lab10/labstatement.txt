@@ -1,0 +1,26 @@
+solve questions 1 and 2
+
+use export from eclipse to create one single archive file of your entire project.
+
+in Eclipse, start a new project called rollno_lab10
+
+keep adding your java file  of all questions into this.
+
+The archive zip file will include all of this.
+
+
+upload this zip file.
+
+
+file->export->general->archive file --> give name as rollno_lab10.zip
+
+
+
+
+
+Q.2 will be uploaded around 3 pm.
+
+get going with familiarizing with Eclipse, and 
+solving q1 first.
+
+

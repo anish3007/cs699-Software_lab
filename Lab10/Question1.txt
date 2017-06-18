@@ -1,0 +1,72 @@
+1. Implement a word frequency counter using Java prebuilt data structures.
+
+
+Filename: FrequencyCounter.java
+ has a class called FrequencyCounter.
+    which has a method called 
+    	void build (String filename)
+    				this builds a tree map internally of entries <word, count>	
+    	void dump ()
+    				this prints the dictionary in space separated format in sorted
+    				order as pairs of words and their frequency counts in the file
+    					word  count.  The words should appear only in all lowercase
+				form, and punctuation marks be removed.
+    	
+    	no other output should be done from this class.
+
+	use internal private function for tokenizing, cleanup on words etc.
+    	
+    	
+This class can be tested from separate called "TestFrequencyCounter.java"
+  through a class called TestFrequencyCounter having main() method which takes in a command
+    line argument, which is the name of the file on which your program is to be tested
+    So this main will create an instance of FrequencyCounter written in FrequencyCounter.java
+     and use it.
+
+
+Use ready-made data structures from java Collection hierarchy as much as possible.     
+Our model solution uses the following library classes, you can also use them if you
+feel the need!
+
+Treemap (which automatically sorts on keys), 
+Scanner, File, ArrayList, 
+Set, 
+String functions (replaceAll,toLowerCase)
+
+We use regular expression "[^a-zA-Z'-]" to replace any substring
+occuring inside a word  matching  this regexp by a null string ""
+e.g. paru78l becomes parul
+and parul. becomes parul 
+
+
+     
+ 
+ 
+sample input and sample output are given.
+
+ 
+		  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+    
+    
+    
+   
+    	
+    	
+    	
