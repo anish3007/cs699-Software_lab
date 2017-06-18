@@ -1,0 +1,49 @@
+cd <dir>
+.    stands for current dir
+..  stands for parent dir
+mkdir dirname    creates a directory 
+ls   lists file
+ls -l  lists in long format
+cat fname     dumps the file
+cp f1 f2    copies file f1 to file f2
+rm f1     deletes file f1
+rmdir d   deletes directory d if it is empty
+ls *.cpp    lists all files ending with exension cpp
+mv f1 f2     renames f1 to f2
+ren f1 f2
+ln -s file link    creates a link (shortcut)
+more filename     reads file page by page
+
+diff f1 f2      dumps the differences
+
+sort f1    sorts lines from f1 and dumps
+
+
+ls > result    the output of command ls is 
+                redirected to a file called "result"
+wc  filename      char,word,line count
+  
+chmod o-x-r-w  filename    for others no execute,read,write permission
+chmod o+r    filename   for others give read permission
+lpr file     print the file
+
+grep  something  file   finds all occurances of something from file
+                    you can use wildcards like * and ?
+
+
+ps -a   dumps process details
+kill -9 pid    terminates the process identified by pid
+top       shows how resources are being used by various processes
+
+du filename      shows the size
+
+scp * me@mars.cse.iitb.ac.in:.    dumps everything in dir into the destination, password will be asked
+
+
+ssh me@nsl-10.cse.iitb.ac.in     gives you a shell on that machine
+
+home directories are mounted and shared across machines
+/tmp belongs to only that machine
+
+date   gives date
+

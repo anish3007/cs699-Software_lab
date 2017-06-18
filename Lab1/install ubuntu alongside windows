@@ -1,0 +1,34 @@
+Instructions to install Ubuntu along side Windows
+
+Steps by Arun Babu and TA team
+--------------------------------------------------------
+
+0. Take backup of your important data which you cannot
+regenerate -- you may lose it during installation
+if the steps aren't followed correctly, so be prepared first
+with a backup. 
+
+1. Download Ubuntu
+    IIT Bombay has its own Ubuntu repository available at its FTP. It contains all Ubuntu versions and official softwares.
+
+    Ubuntu 14.04.2 for 64 Bit PC
+ ftp://ftp.iitb.ac.in/distributions/ubuntu/releases/14.04.2/ubuntu-14.04.2-desktop-amd64.iso
+
+    Ubuntu 14.04.2 32 Bit PC
+ ftp://ftp.iitb.ac.in/distributions/ubuntu/releases/14.04.2/ubuntu-14.04.2-desktop-i386.iso
+
+    The file you have downloaded is an ISO image of DVD. You have to create a bootable USB drive to install it in your system.
+
+2. Create a Bootable USB
+    Download Universal USB Creater from the following link
+ http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
+
+    Follow the instructions to create a bootable Ubuntu USB
+ http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows
+
+3. Follow the steps of the tutorial in link given below except step 3 as we have done that already for a newer version of ubuntu.
+ http://www.everydaylinuxuser.com/2013/09/install-ubuntu-linux-alongside-windows.html
+
+4. If you are stuck at any step, ask your friends who are using linux or TAs for help.
+
+5. After you have installed ubuntu, it is advised to change the software sources to IITB repo as this saves a lot of traffic and gives you faster downloads. To do that Goto Dash -> Software Sources. In the "Download from" drop down, choose ftp.iitb.ac.in. Click close and reload the cache if it prompts. Now all your software downloads will be from IITB repo.
