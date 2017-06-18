@@ -1,0 +1,119 @@
+lab 7 Awk Advanced Features
+
+1) Functions and @include files
+
+write a function called "charcounter()" 
+in a file called "lib.awk" to compute 
+no. of characters in its argument. (find out a smart way to do this.. e.g. you may
+use the readymade length function.)
+
+Now use this function using @include
+feature to develop the following two scripts:
+
+ (a) "averageCharPerLine.awk" 
+	finds avergae no. of characters per line in a given  input file.
+
+	the script to take one argument, which is input filename, and it should print the 
+ value, just the value, and nothing else.
+
+ (b) "charCount.awk" 
+
+ prints just the total no. of chars in the  given input file, and no other message.
+
+
+2) Sorting keys using sort function
+
+Develop a program "keysorter.awk" as follows:
+Read the content of an input file
+which contains tab separated
+key/value pairs, one pair on each line.
+
+sort the keys (first column)
+
+for example, if input file has:
+Amol 	21
+Nisha 	22
+KG 	11
+
+the output will be printed as
+Amol 	
+KG	
+Nisha	
+
+3) Sorting  values using sort function
+
+Develop "valuesorter.awk" as follows:
+Read the content of an input file which
+contains tab separated key value pairs on each line.
+
+sort the values (second column)
+
+
+the output will be printed as
+
+11
+21
+22
+
+4) Column based sorting
+
+Develop AWK program which is invoked as:
+
+awk -f sort.awk -v SORTKEY=<val> <infile>
+
+the program sorts lines in file <infile>
+on the column number given in <val> 
+and prints the sorted lines.
+
+5) substring locator
+
+Develop a program "substringlocator.awk" which finds and prints all those
+words from a given input file, in which,
+a given input substring is embedded
+either in the begining or in the end.
+Try to use string functions of awk.
+
+Invoke the script as 
+
+awk -f substringlocator.awk -v SUB=<val> <infile>
+
+6) Build an English to Indian
+language transliteration program using your own rules. Each rule will match a character
+combination pattern and output an
+equivalent Indian Language letter
+corresponding to this combination.
+ 
+For example
+
+convert
+
+hlo  to हलो
+
+The above was accomplished by mapping
+h to ह
+
+l to ल
+
+o to ो
+
+also conjuncts can be produced as follows:
+
+स + ्  + क  gives स्क
+
+We used
+http://jrgraphix.net/r/Unicode/0900-097F
+which lists unicode tables for various languages
+
+to submit your solution, you will need
+to submit your awk converter, and sample
+input and output test files named as
+"in1", "out1", "in2", "out2" etc.
+
+
+This assignment will also have an appreciation reward for those who
+turn up good converters.
+
+you are free to use output
+language as any language of your
+choices.
+
