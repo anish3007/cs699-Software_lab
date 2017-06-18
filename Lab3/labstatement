@@ -1,0 +1,110 @@
+Add the following Latex features in your 
+previous file. You may download your submission
+from moodle and work on it.
+
+We are not listing what has been covered 
+already.
+
+======================================
+1. fix the problems discussed in previous
+tutorial.
+
+======================================
+2. add the following features:
+
+table of content which is automatically
+generated!  See 3.tex which contains 
+an example. This time we are using
+report style as opposed to earlier 
+article style.
+
+itemize
+enumerate
+quote: using begin{quote} end{quote} environment
+italics
+bold face
+subscript 
+superscript
+overbar
+underline
+=======================================
+3. Add Maths mode formulae and equations
+
+e.g. 5 different types of maths formulae from the given paper on pi formulations
+
+e.g. 5 propositional/first order formulae using various operators
+such as conjunction, disjunction, implication, equivalence
+forall, there exists- such as those in
+the attached documents
+
+use of special symbols such as epsilon, pi, sigma, rho,
+alpha, beta, etc.
+
+==========================================
+
+4) scaling up and down your figures
+
+===========================================
+
+5) use bibtex to cite existing literature.
+(tutorial added)
+
+note that we are including a bibliography
+called myreferences.bib inside our latex
+document.
+
+To compile the bib into the document
+you have to execute command 
+  bibtex 3.tex
+which reads the bibtex file as specified
+in 3.tex and builds cross references.
+After the bibtex you need to compile
+using pdflatex once again to see the cross
+references inside the pdf.
+
+Add new references of different types
+(book, proceeding paper, journal paper)
+in your bibtex file, and cross refer
+the same in your latex file.
+
+
+note that bibtex can be a very long file,
+and only the references which you use
+in latex file appear in the bibliography
+section. Try this out.
+
+===========================================
+
+6) practical dia drawing practice
+
+pick any one the attched pics and
+draw it cleanly using dia, export,
+and include in latex file. scale it
+to fit it beautifully.
+
+============================================
+
+Submit all.
+
+ soft deadline  7 pm one submission must
+   be done by this time.
+
+ only if needed, extension will be given.
+
+ naming scheme:
+
+ your tar file should be named as follows:
+
+ rollno_assignno.tar.gz
+
+ e.g. if roll no. is 11011000 and assignment
+ no. is 3, then submit one single 
+ bundle named
+ 
+
+ 11011000_3.gz
+ or 11011000_3.zip or
+ 11011000_3.tar.gz etc.
+
+============================================
+

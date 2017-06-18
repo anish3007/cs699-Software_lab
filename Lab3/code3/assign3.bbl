@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{Gary2007}
+Gary McGowan.
+\newblock {\em Design of Efficient Document}.
+\newblock McGraw Hills, Connecticut, USA, 2007.
+
+\bibitem{Shefields2010}
+P.Shefields and K.Sheldon.
+\newblock Analysis of structure of tex documents.
+\newblock {\em Article on Typesetting}, 43:25--83, 2010.
+
+\bibitem{Jack1990}
+Jack Ross.
+\newblock Use of latex in word processing.
+\newblock {\em Formatting Text}, 14:27--44, 1990.
+
+\bibitem{Todd2000}
+Henry Todd.
+\newblock Development of documents using latex.
+\newblock In {\em Conference on Typesetting, Florida, USA, 23-26 July 2000},
+  pages 398--403, FL, USA, 2000. Prentice Hall.
+
+\end{thebibliography}

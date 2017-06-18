@@ -1,0 +1,34 @@
+@ARTICLE{Jack1990,
+AUTHOR="Jack Ross",
+TITLE="Use of Latex in Word Processing",
+JOURNAL="Formatting Text",
+VOLUME= "14",
+ISSUE = "4",
+PAGES= "27--44",
+YEAR=1990
+}
+@ARTICLE{Shefields2010,
+AUTHOR="P.Shefields and K.Sheldon",
+TITLE="Analysis of structure of TEX documents",
+JOURNAL="Article on Typesetting",
+VOLUME= ""43",
+ISSUE = "3",
+PAGES= "25--83",
+YEAR="2010"
+}
+@inproceedings{Todd2000,
+author = "Henry Todd",
+title = "Development of Documents using Latex",
+booktitle = "Conference on Typesetting, Florida, USA, 23-26 July 2000",
+publisher = "Prentice Hall",
+address = "FL, USA",
+pages = "398--403",
+year = "2000"
+}
+@Book{Gary2007,
+author = {Gary McGowan},
+title = {Design of Efficient Document},
+publisher = {McGraw Hills},
+year = {2007},
+address = {Connecticut, USA}
+}
