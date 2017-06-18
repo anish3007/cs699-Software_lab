@@ -1,0 +1,69 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+        function e (msg, url, line) {
+                alert ("Message:" + msg)
+                alert ("url:" + url)
+                alert ("line:" + line)
+        }
+
+
+        window.onerror = e
+	function f() {
+
+		frm = document.getElementById("form1");
+		document.write(frm.length + " elements in the form" + "<br>")
+		var i
+		for (i=0; i<frm.length; i++) {
+			document.write("Element " + i + ":" + frm.elements[i].value + "<br>")
+
+		}
+
+ 		document.write (frm.elements[2].checked + "<br>")
+ 		document.write (frm.elements[3].checked + "<br>")
+
+                elem1 = frm.elements[0]
+                elem2 = frm.elements[1]
+                x=  Number (elem1.value)
+                y=  Number (elem2.value)
+                sum = x+y
+		prod = x*y
+		
+ 		if(frm.elements[2].checked)
+                 document.write(x + "+" + y + "=" + sum + "<br>")
+ 		if(frm.elements[3].checked)
+                 document.write(x + "*" + y + "=" + prod + "<br>")
+
+	}
+
+
+</script>
+
+</head>
+
+
+
+<body>
+	<form Id="form1" onsubmit="f()">
+		Number: <br>
+		 <input type="text" name="v1">
+		<br>
+		Number: <br>
+		<input type="text" name="v2">
+		
+		<br> <br> <br>
+		Select all that you need and press Go: <br>
+		<br> Add the numbers <input type="radio" name="v3"  value="op1" checked>
+		<br> Multiply them <input type="radio" name="v3" value="op2">
+		<br><br>
+
+		<input type="submit" value="Go!"> 
+	</form>
+
+
+</body>
+
+
+</html>

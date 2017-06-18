@@ -1,0 +1,107 @@
+<html>
+
+<head>
+ <script type="text/javascript">
+	x = 16 
+	function up () {
+		var upper = x-4
+		if (upper<1) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(upper.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		var val1=element1.textContent
+		var val2=element2.textContent
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+		element1.textContent=val2
+		element2.textContent=val1
+      	x=x-4
+	}
+
+	function down () {
+		var low = x+4
+		if (low>16) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(low.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		var val1=element1.textContent
+		var val2=element2.textContent
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+		element1.textContent=val2
+		element2.textContent=val1
+    	x=x+4
+	}
+
+	function left () {
+		var lside = x-1
+		if (lside%4==0) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(lside.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		var val1=element1.textContent
+		var val2=element2.textContent
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+		element1.textContent=val2
+		element2.textContent=val1
+     	x=x-1
+	}
+
+	function right () {
+		var rside = x+1
+		if (rside%4==1) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(rside.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		var val1=element1.textContent
+		var val2=element2.textContent
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+		element1.textContent=val2
+		element2.textContent=val1
+    	x=x+1
+	}
+ </script>
+
+ <style>
+	body {background-color:LightSkyBlue;}
+	table.board{
+		border-collapse:collapse;
+	}
+	table.board, tr.board, td.board{
+		border: 1px solid black;
+	}
+	table.keys{border: none;}
+</style>
+
+</head>
+
+<body>
+
+
+<h1 align="center"> 699 Demo-15 Puzzle Game <br>Click the UP/DOWN/LEFT/RIGHT Button </h1>
+
+
+ <table class="board" border: "1" style="width:300px; height=300px" align="center">
+ <tr class="board"> <td class="board" id="1" style="width:10%;height:60px; background-color:red" align="center"> 1</td> <td class="board" id="2" style="width:10%;height:60px; background-color:red" align="center">   2 </td> <td class="board" id="3" style="width:10%;height:60px; background-color:red" align="center">   3 </td> <td class="board" id="4" style="width:10%;height:60px; background-color:red" align="center"> 4 </td> </tr>
+ <tr> <td class="board" id="5" style="width:10%;height:60px; background-color:red" align="center"> 5</td> <td class="board" id="6" style="width:10%;height:60px; background-color:red" align="center"> 6   </td> <td class="board" id="7" style="width:10%;height:60px; background-color:red" align="center">  7  </td> <td class="board" id="8" style="width:10%;height:60px; background-color:red" align="center"> 8   </td> </tr>
+ <tr> <td class="board" id="9" style="width:10%;height:60px; background-color:red" align="center">9</td> <td class="board" id="10" style="width:10%;height:60px; background-color:red" align="center">  10  </td> <td class="board" id="11" style="width:10%;height:60px; background-color:red" align="center">  11  </td> <td class="board" id="12" style="width:10%;height:60px; background-color:red" align="center">12  </td> </tr>
+ <tr> <td class="board" id="13" style="width:10%;height:60px; background-color:red" align="center"> 13</td> <td class="board" id="14" style="width:10%;height:60px; background-color:red" align="center">  14  </td> <td class="board" id="15" style="width:10%;height:60px; background-color:red" align="center">  15  </td> <td class="board" id="16" style="width:10%;height:60px; background-color:black" align="center"> 16   </td> </tr>
+</table>
+
+
+<br>
+<table class="keys" border:"0" align="center">
+       <tr> <td></td> <td align="center"> <input type="button" onclick="up()" value = "UP" style="width:60px; height:60px"/> </td> <td></td>
+	<tr> <td><input type="button" onclick="left()" value = "LEFT" style="width:60px; height:60px"/> </td> <td></td><td><input type="button" onclick="right()" value = "RIGHT" style="width:60px; height:60px"/></td><br>
+       <tr> <td></td> <td align="center"> <input type="button" onclick="down()" value = "DOWN" style="width:60px; height:60px"/> </td> <td></td>
+</table>
+</body>
+
+
+</html>

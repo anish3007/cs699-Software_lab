@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+    function e (msg, url, line) {
+                alert ("Message:" + msg)
+                alert ("url:" + url)
+                alert ("line:" + line)
+        }
+        window.onerror = e
+        
+	function f() {
+		text1 = document.getElementById("text1").value
+		document.getElementById("res1").innerHTML= "You Entered:"+text1
+		var i
+		var len=text1.length;
+		var res=""
+		var c
+		for (i=len-1; i>=0; i--){
+			c=text1.charAt(i)
+		//	alert ("c=" + c)
+			res=res+c
+		}
+		if(text1==res)
+			document.getElementById("res2").innerHTML= text1+" is palindrome"
+		else
+			document.getElementById("res2").innerHTML= text1+" is not palindrome"
+	}	
+
+
+</script>
+
+<style>
+	body {background-color:LightSkyBlue;}
+</style>
+</head>
+
+
+
+<body align="center">
+	
+	<h1 align="center">Palindrome Checker</h1>
+	<form Id="form1">
+		Enter a Word:<input id="text1" type="text" name="v1">
+		<br>
+		<br>
+		<input type="button" value="Check if palindrome!" onclick="f()"> 
+	</form>
+	<p id="res1"></p>
+	<p id="res2"></p>
+
+</body>
+
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+
+<head>
+ <script type="text/javascript">
+	x = 0
+	function f () {
+		var elem = document.getElementById("item1")
+		if (x==0) elem.innerHTML = "<a href=\"http://www.cse.iitb.ac.in/~rkj/CS699SoftwareLaboratory.html\"> Software Lab</a>"
+		else elem.innerHTML = "CS699"
+		elem = document.getElementById("item2")
+		if (x==0) elem.innerHTML = "Advanced Programming"
+		else elem.innerHTML = "CS888"
+		x = (x+1)%2
+	}
+ </script>
+</head>
+
+<body>
+
+
+<h1> My Courses </h1>
+
+ <table border="1" >
+ <tr>
+    <td id="item1">CS 699</td> 
+    <td>Slot 4</td>
+ </tr>
+ <tr>
+    <td id="item2"> CS 888 </td>
+   <td> Slot 88</td>
+ </tr>
+</table>
+
+<br>
+  <form>
+	<input type="button" onclick="f()" value = "Click to See the Links" />
+  </form>
+
+</body>
+
+
+</html>

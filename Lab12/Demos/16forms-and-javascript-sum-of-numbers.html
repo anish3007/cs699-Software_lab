@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+	function f() {
+		elem1 = document.forms["form1"]["v1"];
+		elem2 = document.forms["form1"]["v2"];
+		x=  Number (elem1.value)
+		y=  Number (elem2.value)
+		sum = x+y	
+		document.write(x + "+" + y + "=" + sum)
+	}
+
+</script>
+
+</head>
+
+
+
+<body>
+	<form name="form1" onsubmit="f()">
+		Number: <br>
+		 <input type="text" name="v1">
+		<br>
+		Number: <br>
+		<input type="text" name="v2">
+		
+		<input type="submit" value="Go!"> 
+	</form>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+<head>
+ <script type="text/javascript">
+	x = 0
+	function f () {
+		var elem = document.getElementById("headerA")
+		if (x==0) {
+			elem.innerHTML = "List of MTP Topics"
+			x = 1
+		}
+		else {
+			elem.innerHTML = "List of Topics"
+			x = 0
+		}
+	}
+ </script>
+</head>
+
+<body>
+
+	<form>
+		<input type="button" onclick="f()" value = "Click to Toggle" />
+	</form>
+
+<h1 id="headerA"> List of Topics </h1>
+topic1 <br>
+topic2 <br>
+	
+
+</body>
+
+
+</html>

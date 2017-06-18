@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+    function e (msg, url, line) {
+                alert ("Message:" + msg)
+                alert ("url:" + url)
+                alert ("line:" + line)
+        }
+        window.onerror = e
+    x=0    
+	function f() {
+		var img = document.getElementById("img1")
+		if(x==0){
+			img.src= "images/im2.jpg"
+			x=1
+		}
+		else{
+			img.src= "images/im1.jpg"
+			x=0
+		}
+	}	
+
+
+</script>
+
+<style>
+	body {background-color:LightSkyBlue;}
+</style>
+</head>
+
+
+
+<body align="center">
+	
+	<h1 align="center">Toggle Image</h1>
+	<div>
+		<img id="img1" src="images/im1.jpg" width="400" height="300" onmouseenter="f()">
+	</div>
+	<p> Enter the image area to change the image</p>
+	<p id="res2"></p>
+
+</body>
+
+
+</html>

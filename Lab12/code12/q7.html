@@ -1,0 +1,79 @@
+<html>
+
+<head>
+ <script type="text/javascript">
+ 	function show(j) {
+
+ 		var ckc = document.getElementById("ck"+j.toString())
+		var img = document.getElementById("im"+j.toString())
+		//alert("checked checked="+ckc.checked)
+		//alert("image="+img.id)
+		if(ckc.checked){
+			//alert("image checked")
+			switch (j){
+				case 1: img.src='images/q7.jpeg'
+						break;
+				case 2: img.src='images/q72.jpg'
+						break;
+				case 3: img.src='images/q73.jpg'
+						break;
+				case 4: img.src='images/q74.jpg'
+						break;
+			}
+			
+		}
+		else{
+			//alert("image unchecked")
+			//img.style.visibility='hidden'
+			img.src='images/blank.png'
+
+		}
+	}
+ </script>
+
+ <style>
+	body {background-color:LightSkyBlue;}
+	table.board{
+		border-collapse:collapse;
+	}
+	table.board, tr.board, td.board{
+		border: 1px solid black;
+	}
+	table.keys{border: none;}
+</style>
+
+</head>
+
+<body>
+
+
+<h1 align="center"> Hidden Images <br>Click the checkbox to open. </h1>
+
+
+ <table class="imageTable" border: "1" style="width:800px; height=500px" align="center">
+ <tr class="imageTable"> 
+ 	<td class="imageTable" id="td1" style="width:300px;height:200px" align="center"> 
+ 		<img id="im1" src="images/blank.png" width="300" height="200" style="visibility:visible"></td> 
+ 	<td class="imageTable" id="td2" style="width:300px;height:200px" align="center"> 
+ 		<img id="im2" src="images/blank.png" width="300" height="200" style="visibility:visible"></td> 
+</tr>
+ <tr class="imageTable"> 
+ 	<td class="imageTable" id="td3" style="width:300px;height:200px" align="center"> 
+ 		<img id="im3" src="images/blank.png" width="300" height="200" style="visibility:visible"></td> 
+ 	<td class="imageTable" id="td4" style="width:300px;height:200px" align="center"> 
+ 		<img id="im4" src="images/blank.png" width="300" height="200" style="visibility:visible"></td> 
+ </tr>
+ </table>
+
+
+<br>
+<table class="checks" border:"0" align="center">
+       <tr> <td>KRESIT</td><td align="center"> <input id="ck1" type="checkbox" onclick="show(1)" value = "show1" style="width:30px; height:60px; padding-right:100px"/> </td> 
+		<td>Main Building</td><td align="center"> <input id="ck2" type="checkbox" onclick="show(2)" value = "show2" style="width:30px; height:60px; padding-right:20px"/> </td>
+		<td>IITB Sports</td><td align="center"> <input id="ck3" type="checkbox" onclick="show(3)" value = "show3" style="width:30px; height:60px; padding-right:20px"/> </td>
+		<td>IITB Library</td><td align="center"> <input id="ck4" type="checkbox" onclick="show(4)" value = "show4" style="width:30px; height:60px; padding-right:20px"/> </td></tr>
+</table>
+</body>
+
+
+</html>

@@ -1,0 +1,78 @@
+<html>
+
+<head>
+ <script type="text/javascript">
+	x = 16 
+	function up () {
+		var upper = x-4
+		if (upper<1) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(upper.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+      	x=x-4
+	}
+
+	function down () {
+		var low = x+4
+		if (low>16) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(low.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+    	x=x+4
+	}
+
+	function left () {
+		var lside = x-1
+		if (lside%4==0) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(lside.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+     	x=x-1
+	}
+
+	function right () {
+		var rside = x+1
+		if (rside%4==1) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(rside.toString())
+		var col1= element1.style.backgroundColor
+		var col2= element2.style.backgroundColor
+		element1.style.backgroundColor=col2
+		element2.style.backgroundColor=col1
+    	x=x+1
+	}
+ </script>
+</head>
+
+<body>
+
+
+<h1 align="center"> 699 Demo Table Cell <br> Element Change <br> Click the UP/DOWN/LEFT/RIGHT Button </h1>
+
+ <table border="1"  style="width:300px; height=300px" align="center">
+ <tr> <td id="1" style="width:10%; background-color:red"> <br><br><br>   </td> <td id="2" style="width:10%; background-color:red">    </td> <td id="3" style="width:10%; background-color:red">    </td> <td id="4" style="width:10%; background-color:red">    </td> </tr>
+ <tr> <td id="5" style="width:10%; background-color:red"> <br><br><br>   </td> <td id="6" style="width:10%; background-color:red">    </td> <td id="7" style="width:10%; background-color:red">    </td> <td id="8" style="width:10%; background-color:red">    </td> </tr>
+ <tr> <td id="9" style="width:10%; background-color:red">  <br><br><br>  </td> <td id="10" style="width:10%; background-color:red">    </td> <td id="11" style="width:10%; background-color:red">    </td> <td id="12" style="width:10%; background-color:red">    </td> </tr>
+ <tr> <td id="13" style="width:10%; background-color:red"> <br><br><br>   </td> <td id="14" style="width:10%; background-color:red">    </td> <td id="15" style="width:10%; background-color:red">    </td> <td id="16" style="width:10%; background-color:black">    </td> </tr>
+</table>
+
+<br>
+<table align="center">
+       <tr> <td></td> <td align="center"> <input type="button" onclick="up()" value = "UP" style="width:60px; height:60px"/> </td> <td></td>
+	<tr> <td><input type="button" onclick="left()" value = "LEFT" style="width:60px; height:60px"/> </td> <td></td><td><input type="button" onclick="right()" value = "RIGHT" style="width:60px; height:60px"/></td><br>
+       <tr> <td></td> <td align="center"> <input type="button" onclick="down()" value = "DOWN" style="width:60px; height:60px"/> </td> <td></td>
+</table>
+
+</body>
+
+
+</html>

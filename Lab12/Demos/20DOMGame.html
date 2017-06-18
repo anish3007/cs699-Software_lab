@@ -1,0 +1,45 @@
+<html>
+
+<head>
+ <script type="text/javascript">
+	x = 16 
+	function up () {
+		upper = x-4
+		if (upper<0) return;
+		var element1 = document.getElementById(x.toString())
+		var element2 = document.getElementById(upper.toString())
+
+    		var clonedElement1 = element1.cloneNode(true);
+    		var clonedElement2 = element2.cloneNode(true);
+
+    		element2.parentNode.replaceChild(clonedElement1, element2);
+    		element1.parentNode.replaceChild(clonedElement2, element1);
+
+
+	}
+ </script>
+</head>
+
+<body>
+
+
+<h1> 699 Demo Table Cell <br> Element Change <br> Click the UP Button </h1>
+
+ <table border="1"  style="width:300px; height=300px">
+ <tr> <td id="1" style="width:10%" bgcolor="#FF0000"> <br><br><br>   </td> <td id="2" style="width:10%" bgcolor="#F0000">    </td> <td id="3" style="width:10%" bgcolor="#F0000">    </td> <td id="4" style="width:10%" bgcolor="#F0000">    </td> </tr>
+ <tr> <td id="5" style="width:10%" bgcolor="#F0000"> <br><br><br>   </td> <td id="6" style="width:10%" bgcolor="#F0000">    </td> <td id="7" style="width:10%" bgcolor="#F0000">    </td> <td id="8" style="width:10%" bgcolor="#F0000">    </td> </tr>
+ <tr> <td id="9" style="width:10%" bgcolor="#F0000">  <br><br><br>  </td> <td id="10" style="width:10%" bgcolor="#F0000">    </td> <td id="11" style="width:10%" bgcolor="#F0000">    </td> <td id="12" style="width:10%" bgcolor="#F0000">    </td> </tr>
+ <tr> <td id="13" style="width:10%" bgcolor="#F0000"> <br><br><br>   </td> <td id="14" style="width:10%" bgcolor="#F0000">    </td> <td id="15" style="width:10%" bgcolor="#F0000">    </td> <td id="16" style="width:10%" bgcolor="#00000">    </td> </tr>
+</table>
+
+<br>
+<table>
+       <tr> <td></td> <td align="center"> <input type="button" onclick="up()" value = "UP" /> </td> <td></td>
+	<tr> <td><input type="button" onclick="left()" value = "LEFT" /> </td> <td></td><td><input type="button" onclick="right()" value = "RIGHT" /></td><br>
+       <tr> <td></td> <td align="center"> <input type="button" onclick="down()" value = "DOWN" /> </td> <td></td>
+</table>
+
+</body>
+
+
+</html>
